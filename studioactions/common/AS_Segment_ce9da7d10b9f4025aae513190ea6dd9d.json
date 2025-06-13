@@ -1,0 +1,45 @@
+{
+    "AS_Segment_ce9da7d10b9f4025aae513190ea6dd9d": {
+        "id": "AS_Segment_ce9da7d10b9f4025aae513190ea6dd9d",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "number",
+            "name": "sectionNumber"
+        }, {
+            "datatype": "number",
+            "name": "rowNumber"
+        }],
+        "contextObj": {
+            "name": "userwidgetmodel",
+            "type": "userwidgets",
+            "KUID": "uf4255068e184fa5b0834935a6b9ed93"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__f91ca854ee384ac08f29ed5c09660cec",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "onRowClick",
+            "display": "onRowClick",
+            "inputparams": [{
+                "name": "seguiWidget",
+                "value": ""
+            }, {
+                "name": "sectionNumber",
+                "value": ""
+            }, {
+                "name": "rowNumber",
+                "value": ""
+            }, {
+                "name": "selectedState",
+                "value": ""
+            }],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

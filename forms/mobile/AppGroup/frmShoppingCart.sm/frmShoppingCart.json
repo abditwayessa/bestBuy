@@ -39,7 +39,8 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxShoppingCart"
+        "flxMain",
+        "humburgerMenu"
     ],
     "containerweight": 100,
     "controllerInfo": {

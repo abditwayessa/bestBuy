@@ -2,7 +2,7 @@
     "DNDConfig": null,
     "_height_": {
         "type": "string",
-        "value": "37%"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -25,7 +25,7 @@
     "_skin_": "sd2f811fd9404344b378701707352893",
     "_top_": {
         "type": "string",
-        "value": "61.5%"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -35,22 +35,20 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "lblTotalReview",
-        "flxDropBtn",
-        "segReview"
+        "flxHome"
     ],
     "clipbounds": false,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxReview",
+    "id": "flxMain",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "d6607ea69ef347dba5da37bb89d6d7ea",
+    "kuid": "b5c52e7d732946c5b4c275e2c05212de",
     "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxMain",
-    "pf": "frmProductDetail",
+    "parent": "frmHome",
+    "pf": "frmHome",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

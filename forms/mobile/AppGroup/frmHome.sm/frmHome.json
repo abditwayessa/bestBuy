@@ -39,9 +39,9 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxHome",
-        "humburgerMenu",
-        "flxSearch"
+        "flxMain",
+        "flxSearch",
+        "humburgerMenu"
     ],
     "containerweight": 100,
     "controllerInfo": {

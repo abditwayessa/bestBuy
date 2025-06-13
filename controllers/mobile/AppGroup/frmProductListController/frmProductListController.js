@@ -65,7 +65,7 @@ define({
           text: (record.customerReviewAverage === "undefined" || !record.customerReviewAverage) ? "Avg User Rating: " : "Avg User Rating: " + record.customerReviewAverage
         }
       }));
-
+      console.log("Abdi Data filter: " + JSON.stringify(filteredRecords, null, 2));
       self.view.segProducts.setData(filteredRecords);
     }
     getProductListService = mfintegrationsecureinvokerasync(
@@ -95,7 +95,7 @@ define({
 
     var ntf = new kony.mvc.Navigation("frmProductDetail");
     ntf.navigate();
-//     kony.application.destroyForm("frmProductList");
+    //     kony.application.destroyForm("frmProductList");
 
 
     //     var pathInfos = self.navigationTracker.reduce(

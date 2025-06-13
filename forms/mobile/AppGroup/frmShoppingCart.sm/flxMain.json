@@ -36,13 +36,12 @@
     "canUpdateUI": true,
     "children": [
         "toolbarMenu",
-        "flxCart",
-        "humburgerMenu"
+        "flxCart"
     ],
     "clipbounds": false,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxShoppingCart",
+    "id": "flxMain",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

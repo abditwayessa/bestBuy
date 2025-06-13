@@ -62,7 +62,7 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "ha6ca57aed0e4d44b7fabb5dbbd8469d",
     "name": "kony.ui.Label",
     "parent": "flxCart",

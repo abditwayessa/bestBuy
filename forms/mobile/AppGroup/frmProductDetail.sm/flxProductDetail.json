@@ -35,8 +35,8 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "humburgerMenu",
-        "flxProductDetailBody"
+        "flxMain",
+        "humburgerMenu"
     ],
     "clipbounds": false,
     "containerweight": 100,

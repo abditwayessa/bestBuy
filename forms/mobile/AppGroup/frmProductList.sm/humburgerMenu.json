@@ -43,7 +43,7 @@
             "__events__": {},
             "__info__": {
                 "isRoot": true,
-                "kuid": "d0090f94d1f14d828b894b5b315dfb48",
+                "kuid": "a3c0a77ab2f04613bb11b8b6342ca9d8",
                 "srcKUID": "a70edc9d1f764d319e945855821997b8",
                 "wType": "FlexContainer"
             },
@@ -57,7 +57,7 @@
         "segHumbergurMenu": {
             "__events__": {},
             "__info__": {
-                "kuid": "d2a1658f434e42b19fea7be462ccc361",
+                "kuid": "a86f9f4b40a34c4798f848d630c83e50",
                 "srcKUID": "b075757bb4164bd68770f379e6e9c028",
                 "wType": "Segment"
             }
@@ -69,12 +69,12 @@
     "iscustomlayout": false,
     "isdatareferenced": false,
     "isvisible": true,
-    "kuid": "d0090f94d1f14d828b894b5b315dfb48",
+    "kuid": "a3c0a77ab2f04613bb11b8b6342ca9d8",
     "layouttype": 2,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",
-    "parent": "flxProductDetail",
-    "pf": "frmProductDetail",
+    "parent": "frmProductList",
+    "pf": "frmProductList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

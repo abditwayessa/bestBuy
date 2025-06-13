@@ -2,6 +2,7 @@ define({
 
   AS_Button_Delete: function(eventobject, context) {
     var currentForm = kony.application.getCurrentForm();
+    var previousForm = kony.application.getPreviousForm();
 
     // Get the clicked row data
     var selectedRecord = currentForm.segCarts.data[context.rowIndex];
@@ -12,6 +13,7 @@ define({
 
 
     var myArray = kony.store.getItem("cart");
+
     console.log("Abdi Data received: " + JSON.stringify(myArray, null, 2));
     alert("You clicked delete for: " + orderNums);
 
@@ -22,8 +24,8 @@ define({
         break; // Exit the loop after deleting
       }
     }
-    
-     var filteredRecords = myArray.map((record) => {
+
+    var filteredRecords = myArray.map((record) => {
       return {
         lblProductNames: record.name,
         lblProductPrice: "$"+record.salePrice,
@@ -33,9 +35,15 @@ define({
       }
 
     });
-    
+    if(myArray.length < 1){
+      currentForm.lblNoProduct.setVisibility(true);
+      currentForm.segCarts.setVisibility(false); 
+    }else{
+      currentForm.segCarts.setVisibility(true); 
+      currentForm.lblNoProduct.setVisibility(false	);     
+    }
     console.log("Abdi Data deleted: " + JSON.stringify(myArray, null, 2));
-    this.view.segCarts.setData(filteredRecords);
+    currentForm.segCarts.setData(filteredRecords);
     kony.store.removeItem("cart");
     kony.store.setItem("cart", myArray);
   }

@@ -24,7 +24,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sb7b26385c3049778773018578f575a2",
+    "_skin_": "sda29324e4bd4a60bd915aa38b5e5567",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -43,7 +43,7 @@
             "__events__": {},
             "__info__": {
                 "isRoot": true,
-                "kuid": "hd07f7da8049493da25807d791916718",
+                "kuid": "i70d3ff3f316405b892720fb6abf7c33",
                 "srcKUID": "a70edc9d1f764d319e945855821997b8",
                 "wType": "FlexContainer"
             },
@@ -57,7 +57,7 @@
         "segHumbergurMenu": {
             "__events__": {},
             "__info__": {
-                "kuid": "ed72c9541d194573bb10b4931434b530",
+                "kuid": "ic9a2202c28e4b078450a55c8830f316",
                 "srcKUID": "b075757bb4164bd68770f379e6e9c028",
                 "wType": "Segment"
             }
@@ -69,7 +69,7 @@
     "iscustomlayout": false,
     "isdatareferenced": false,
     "isvisible": true,
-    "kuid": "hd07f7da8049493da25807d791916718",
+    "kuid": "i70d3ff3f316405b892720fb6abf7c33",
     "layouttype": 2,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",

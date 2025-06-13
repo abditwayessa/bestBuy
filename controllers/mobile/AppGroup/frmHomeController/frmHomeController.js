@@ -14,6 +14,8 @@ define({
     this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
     this.view.toolbarMenu.btnSearch.onClick = this.openAndClosSearch;
     this.view.btnCancel.onClick = this.closeSearch;
+    
+   
   },
   onPreShow: function () {
     this.rateSelection();
@@ -244,7 +246,7 @@ define({
     var self = this;
     function moveCallback() {}
     if (this.view.humburgerMenu.left === "-80%") {
-      self.view.flxHome.animate(
+      self.view.flxMain.animate(
         kony.ui.createAnimation({
           100: {
             left: "80%",
@@ -283,7 +285,7 @@ define({
         }
       );
     } else {
-      self.view.flxHome.animate(
+      self.view.flxMain.animate(
         kony.ui.createAnimation({
           100: {
             left: "0%",

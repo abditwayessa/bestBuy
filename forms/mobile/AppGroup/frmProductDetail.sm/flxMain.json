@@ -44,7 +44,7 @@
     "clipbounds": false,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxProductDetailBody",
+    "id": "flxMain",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,

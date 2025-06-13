@@ -9,7 +9,7 @@ define({
     this.view.btnDrop.onClick = this.onDropDownandUp;
     this.getReviewData(kony.store.getItem("productId"));
     this.view.btnAddToCart.onClick = this.addToCart;
-    this.view.humburgerMenu.segHumbergurMenu.onRowClick = this.navigateToCart;
+//     this.view.humburgerMenu.segHumbergurMenu.onRowClick = this.navigateToCart;
   },
   onPreShow: function () {
     this.getProductDetail();
@@ -265,7 +265,7 @@ define({
     var self = this;
     function moveCallback() {}
     if (this.view.humburgerMenu.left === "-80%") {
-      self.view.flxProductDetailBody.animate(
+      self.view.flxMain.animate(
         kony.ui.createAnimation({
           100: {
             left: "80%",
@@ -304,7 +304,7 @@ define({
         }
       );
     } else {
-      self.view.flxProductDetailBody.animate(
+      self.view.flxMain.animate(
         kony.ui.createAnimation({
           100: {
             left: "0%",

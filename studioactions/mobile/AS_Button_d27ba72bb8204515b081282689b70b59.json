@@ -47,7 +47,6 @@
             "type": "MOVE_ACTION",
             "itemType": "FORM",
             "itemId": "frmHome",
-            "widgetId": "humburgerMenu",
             "itemKUID": "cd29b71949fe4f8cbfb5733a4315eb5a",
             "widgetKUID": "hd07f7da8049493da25807d791916718",
             "wType": "UserWidgetInstance",
@@ -69,8 +68,7 @@
             "parentAnimation": "MOVE_ACTION_cfe3dd4b928c4cada608221e7ce9ead7",
             "animationId": "MOVE_ACTION_faf0d588d8c44c9db6ba014c1469ce97",
             "displayAnimationId": "MOVE_ACTION_faf0d588d8c44c9db6ba014c1469ce97",
-            "forkedPlatform": "all",
-            "widgetPath": "this.view.humburgerMenu"
+            "forkedPlatform": "all"
         }]
     }
 }

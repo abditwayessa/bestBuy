@@ -35,7 +35,7 @@
     ],
     "_height_": {
         "type": "string",
-        "value": "240dp"
+        "value": "373dp"
     },
     "_indicator_": "none",
     "_left_": {
@@ -66,12 +66,16 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "containerweight": 100,
-    "counter": "02",
+    "counter": "03",
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
     "hasSections": false,
+    "hiddencolumns": {
+        "menuId": "text"
+    },
     "id": "segHumbergurMenu",
+    "ide_onRowClick": "AS_Segment_ce9da7d10b9f4025aae513190ea6dd9d",
     "info": null,
     "ipad": {
         "psp": {
@@ -97,6 +101,9 @@
                 "lblMenuName": {
                     "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                     "text": "Home"
+                },
+                "menuId": {
+                    "text": "home"
                 }
             },
             {
@@ -107,6 +114,9 @@
                 "lblMenuName": {
                     "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                     "text": "Stores"
+                },
+                "menuId": {
+                    "text": "store"
                 }
             },
             {
@@ -117,6 +127,22 @@
                 "lblMenuName": {
                     "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
                     "text": "Cart"
+                },
+                "menuId": {
+                    "text": "cart"
+                }
+            },
+            {
+                "imgMenuLogo": {
+                    "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                    "src": "back.png"
+                },
+                "lblMenuName": {
+                    "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                    "text": "Logout"
+                },
+                "menuId": {
+                    "text": "logout"
                 }
             }
         ],
@@ -140,7 +166,7 @@
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainselection": false,
-    "rowcounter": 2,
+    "rowcounter": 3,
     "rowfocusskin": "s1617027537447f4aeb55848db0f637c",
     "rowskin": "sb880d5ebe754760b0e0359f122e2dc3",
     "screenlevelwidget": false,

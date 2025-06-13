@@ -6,10 +6,42 @@
             "nodeDataArray": [
                 {
                     "formKUID": "cd29b71949fe4f8cbfb5733a4315eb5a",
-                    "formName": "Form1",
+                    "formName": "frmHome",
                     "isStartupForm": true,
                     "key": "cd29b71949fe4f8cbfb5733a4315eb5a",
                     "loc": "8 24.7544921875",
+                    "thumbnailURL": null
+                },
+                {
+                    "formKUID": "c30b2075f7484029ad59746864100808",
+                    "formName": "frmProductDetail",
+                    "isStartupForm": false,
+                    "key": "c30b2075f7484029ad59746864100808",
+                    "loc": "188 199.508984375",
+                    "thumbnailURL": null
+                },
+                {
+                    "formKUID": "gc043d6cfe4f49beba1772cbfe1f5ad4",
+                    "formName": "frmProductImage",
+                    "isStartupForm": false,
+                    "key": "gc043d6cfe4f49beba1772cbfe1f5ad4",
+                    "loc": "8 639.508984375",
+                    "thumbnailURL": null
+                },
+                {
+                    "formKUID": "ead97d42320b45918a4e0a7337e0dd72",
+                    "formName": "frmProductList",
+                    "isStartupForm": false,
+                    "key": "ead97d42320b45918a4e0a7337e0dd72",
+                    "loc": "8 1239.5089843750002",
+                    "thumbnailURL": null
+                },
+                {
+                    "formKUID": "ec72554459e548dda2da7093eb26b716",
+                    "formName": "frmShoppingCart",
+                    "isStartupForm": false,
+                    "key": "ec72554459e548dda2da7093eb26b716",
+                    "loc": "8 1839.508984375",
                     "thumbnailURL": null
                 }
             ]

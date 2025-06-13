@@ -34,7 +34,8 @@
     "canUpdateUI": true,
     "children": [
         "flxProductList",
-        "ErrorPopup"
+        "ErrorPopup",
+        "humburgerMenu"
     ],
     "containerweight": 100,
     "controllerInfo": {
