@@ -1,0 +1,27 @@
+{
+    "AS_Button_hf8f3d731bea41469fe91bcfc12bd03b": {
+        "id": "AS_Button_hf8f3d731bea41469fe91bcfc12bd03b",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "userwidgetmodel",
+            "type": "userwidgets",
+            "KUID": "u6cb2b8290434d55b0689cc99dfa0694"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__jc7b224613224ac79120711001a4b3a7",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "retryFunction",
+            "display": "retryFunction",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

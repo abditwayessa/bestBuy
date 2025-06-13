@@ -28,7 +28,7 @@
     "android": {
         "needAppMenu": false,
         "psp": {
-            "windowSoftInputMode": 1
+            "windowSoftInputMode": 2
         }
     },
     "androidwearos": {
@@ -37,9 +37,11 @@
             "windowSoftInputMode": 1
         }
     },
+    "bounces": false,
     "canUpdateUI": true,
     "children": [
-        "flxProductDetail"
+        "flxProductDetail",
+        "ErrorPopup"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -55,6 +57,7 @@
     "device": "iPhone13",
     "displayorientation": 1,
     "enabledforidletimeout": false,
+    "enablescrolling": false,
     "friendlyName": "frmProductDetail",
     "id": "frmProductDetail",
     "ide_init": "AS_Form_gd5ed2bff27b44d2acd8a9c5dd6df3ac",

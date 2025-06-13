@@ -37,11 +37,13 @@
             "windowSoftInputMode": 1
         }
     },
+    "bounces": false,
     "canUpdateUI": true,
     "children": [
         "flxMain",
         "flxSearch",
-        "humburgerMenu"
+        "humburgerMenu",
+        "error"
     ],
     "containerweight": 100,
     "controllerInfo": {
@@ -57,9 +59,11 @@
     "device": "iPhone13",
     "displayorientation": 1,
     "enabledforidletimeout": false,
+    "enablescrolling": false,
     "friendlyName": "frmHome",
     "id": "frmHome",
     "ide_init": "AS_Form_b38657f9aa69427793259dba60aeb243",
+    "ide_postShow": "AS_Form_ac157b9408a2456b995cf55eb89e37e8",
     "ide_preShow": "AS_Form_fdfa7e8f987242bab185a6ffd2674077",
     "info": null,
     "initdone": false,

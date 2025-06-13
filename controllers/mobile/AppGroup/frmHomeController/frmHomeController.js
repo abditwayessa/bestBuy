@@ -8,19 +8,23 @@ define({
   categoriesData: [], //in use for subcategories
 
   onInit: function () {
-    this.getCategories();
+    kony.ui.makeAffineTransform()
+
     this.view.segCategories.onRowClick = this.onRowClicked;
     this.view.toolbarMenu.btnBack.onClick = this.onBackClicked;
     this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
-    this.view.toolbarMenu.btnSearch.onClick = this.openAndClosSearch;
+    this.view.toolbarMenu.btnSearch.onClick = this.openAndCloseSearch;
     this.view.btnCancel.onClick = this.closeSearch;
-    
-   
+    this.view.txtSearch.onDone = this.searchProduct;
+    this.view.error.btnRetry.onClick = this.getCategories;
   },
   onPreShow: function () {
+    kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
     this.rateSelection();
+    this.getCategories();
   },
   getCategories: function (id) {
+
     var self = this;
     var serviceName = "BestBuyAPI";
     var client = kony.sdk.getCurrentInstance();
@@ -32,7 +36,29 @@ define({
       //  all responses
       const responseData = JSON.parse(JSON.stringify(response));
       if(response.errmsg){
-        alert("Network Error");
+        self.view.error.lblError.text = "Network Error! Please try again!";
+        function moveCallback(){}
+
+        self.view.error.animate(
+          kony.ui.createAnimation({
+            100: {
+              left: "0%",
+              stepConfig: {
+                timingFunction: kony.anim.EASE,
+              },
+            },
+          }),
+          {
+            delay: 0,
+            iterationCount: 1,
+            fillMode: kony.anim.FILL_MODE_FORWARDS,
+            duration: 0.25,
+          },
+          {
+            animationEnd: moveCallback,
+          }
+        );
+        kony.application.dismissLoadingScreen();
         return;
       }
 
@@ -48,6 +74,7 @@ define({
           var paths = responseData.categories[0].path;
           var categories = response.categories;
         } else {
+          alert("No sub");
           kony.store.setItem(
             "categoryID",
             JSON.stringify(
@@ -170,6 +197,8 @@ define({
         self.view.lblPage.text = names;
 
         self.view.segCategories.setData(filteredRecords);
+
+        kony.application.dismissLoadingScreen();
       }
     }
 
@@ -187,6 +216,7 @@ define({
     selectedState
   ) {
     var self = this;
+    kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
     var categoriesId = this.view.segCategories.selectedRowItems[0].lblId;
 
     var pathInfos = self.navigationTracker.reduce(
@@ -195,8 +225,8 @@ define({
     );
     const names = pathInfos.slice(1).map((item) => item.name);
 
-    this.view.toolbarMenu.flxBack.setVisibility(true);
     this.getCategories(categoriesId);
+    this.view.toolbarMenu.flxBack.setVisibility(true);
   },
   onBackClicked: function () {
     var self = this;
@@ -325,7 +355,7 @@ define({
       );
     }
   },
-  openAndClosSearch: function () {
+  openAndCloseSearch: function () {
     var self = this;
 
     function openSearchCallback() {}
@@ -415,12 +445,71 @@ define({
   },
   rateSelection: function () {
     this.view.lbxFilter.masterData = [
-      ["S", "<Select a value>"],
-      ["oneStar", "1 Star"],
-      ["twoStar", "2 Star"],
-      ["threeStar", "3 Star"],
-      ["fourStar", "4 Star"],
-      ["fiveStar", "5 Star"],
+      [" ", "<Select a value>"],
+      ["1", "1 star or better"],
+      ["2", "2 star or better"],
+      ["3", "3 star or better"],
+      ["4", "4 star or better"],
+      ["5", "5 star or better"],
     ];
+    this.view.lbxFilter.selectedKey = " ";
   },
+  searchProduct: function(){
+    this.closeSearch();
+    var searchData = this.view.txtSearch.text;
+    var rateData = this.view.lbxFilter.selectedKey;
+    this.closeSearch();
+    console.log("Abdi Search : " + searchData);
+    console.log("Abdi Rate : " + rateData);
+    kony.store.setItem("searchData", searchData);
+    kony.store.setItem("searchRate", rateData);
+    this.view.txtSearch.text = "";
+    this.view.lbxFilter.selectedKey="";
+    var ntf = new kony.mvc.Navigation("frmProductList");
+    ntf.navigate();
+
+  },
+  setAnimationforSeg: function() {
+    // Create two transform objects
+    var transformObject1 = kony.ui.makeAffineTransform();
+    var transformObject2 = kony.ui.makeAffineTransform();
+
+    // Start from 0% width (scaleX = 0), keep full height (scaleY = 1)
+    transformObject1.scale(0, 1); // Start collapsed horizontally
+    transformObject2.scale(1, 1); // End at full width
+
+    // Define the animation steps
+    var animationObject = kony.ui.createAnimation({
+      "0": { 
+        "transform": transformObject1, 
+        "stepConfig": { "timingFunction": kony.anim.EASE_IN }
+      },
+      "100": { 
+        "transform": transformObject2, 
+        "stepConfig": { "timingFunction": kony.anim.EASE_OUT }
+      }
+    });
+
+    // Animation configuration
+    var animationConfig = {
+      duration: 0.5, // Half a second for smooth transition
+      fillMode: kony.anim.FILL_MODE_FORWARDS
+    };
+
+    // Optional callback when animation ends
+    var animationCallbacks = {
+      "animationEnd": function() { kony.print("Animation Finished!"); }
+    };
+
+    // Combine everything into one animation definition
+    var animationDefObject = {
+      definition: animationObject,
+      config: animationConfig,
+      callbacks: animationCallbacks
+    };
+
+    // Apply the animation to segment when it becomes visible
+    this.view.segCategories.setAnimations({ visible: animationDefObject });
+  },
+
 });

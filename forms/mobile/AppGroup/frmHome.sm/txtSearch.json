@@ -22,7 +22,7 @@
         0
     ],
     "_placeholder_": "Search",
-    "_skin_": "sab7e1ffdf7e41f4b5f52a841fbd46f2",
+    "_skin_": "s1199c5a81af4cba9e9c7d55f20d3ae2",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -41,7 +41,9 @@
     "containerheightmode": 1,
     "containerweight": 100,
     "contentalignment": 4,
-    "focusskin": "sc52e20c76d944c9ad4bcb59b383108c",
+    "disabledSkins": {
+        "focusSkin": "sc52e20c76d944c9ad4bcb59b383108c"
+    },
     "id": "txtSearch",
     "info": null,
     "iphone": {},

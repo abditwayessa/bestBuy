@@ -28,6 +28,29 @@ define({
 
     function getDataCallback(status, response) {
       const responseData = JSON.parse(JSON.stringify(response));
+       if(response.errmsg){
+        const errorResponse =  response.errmsg;
+        self.view.ErrorPopup.lblError.text = errorResponse;
+        function errorCallback() {}
+        self.view.ErrorPopup.animate(
+          kony.ui.createAnimation({
+            "100": {	
+              "left": "0%",
+              "stepConfig": {
+                "timingFunction": kony.anim.EASE
+              }
+            }
+          }), {
+            "delay": 0,
+            "iterationCount": 1,
+            "fillMode": kony.anim.FILL_MODE_FORWARDS,
+            "duration": 0.0,
+            "direction": kony.anim.DIRECTION_ALTERNATE
+          }, {
+            "animationEnd": errorCallback
+          });
+        return;
+      }
       var onSale = responseData.products[0].onSale;
       var rate = responseData.products[0].customerReviewAverage;
       var imageArray;

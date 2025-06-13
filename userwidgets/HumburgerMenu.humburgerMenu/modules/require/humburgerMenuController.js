@@ -10,26 +10,23 @@ define(function () {
       var selectedMenu =this.view.segHumbergurMenu.selectedRowItems[0]
       .menuId;
       var currentForm = kony.application.getCurrentForm().id;
-      var currentForms = kony.application.getCurrentForm();
-
-      console.log("Abdi current + " + currentForm);
-      console.log("Abdi Menu : " + selectedMenu);
 
       switch(selectedMenu){
         case "home":
           if(currentForm === "frmHome"){
             this.hideHumburger();
           }else{
-            this.hideHumburger();
+            kony.application.destroyForm("frmHome");
             var ntf = new kony.mvc.Navigation("frmHome");
             ntf.navigate();
+            this.hideHumburger();
           }
           break;
         case "store":   
-          if(currentForm === "frmHome"){
+          if(currentForm === "frmStoreLocator"){
             this.hideHumburger();
           }else{
-            var ntf = new kony.mvc.Navigation("frmHome");
+            var ntf = new kony.mvc.Navigation("frmStoreLocator");
             ntf.navigate();
           }
           break;
@@ -37,9 +34,9 @@ define(function () {
           if(currentForm === "frmShoppingCart"){
             this.hideHumburger();
           }else{
-            this.hideHumburger();
             var ntf = new kony.mvc.Navigation("frmShoppingCart");
             ntf.navigate();
+            this.hideHumburger();
           }
           break;
         case "logout":

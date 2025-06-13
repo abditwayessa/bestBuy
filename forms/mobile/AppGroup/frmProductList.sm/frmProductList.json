@@ -15,6 +15,12 @@
         0
     ],
     "_percent_": true,
+    "_pxMenuIndex": [
+        0,
+        1,
+        0,
+        3
+    ],
     "_skin_": "s5b448e937564e2b99154c638f11e3d0",
     "_title_": null,
     "addWidgetsdone": false,
@@ -54,6 +60,7 @@
     "friendlyName": "frmProductList",
     "id": "frmProductList",
     "ide_init": "AS_Form_ie30d2535373420ab21b96439da483a4",
+    "ide_preShow": "AS_Form_h6893aac97124b23a69829cc604ce1c9",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
