@@ -2,6 +2,7 @@ define({
   onInit: function () {
     this.view.segProducts.onRowClick = this.onRowClicked;
     this.view.toolbarMenu.btnBack.onClick = this.onBackClick;
+    this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
   },
   onPreShow: function () {
     var inputText = kony.store.getItem("searchData");
@@ -62,7 +63,7 @@ define({
         );
         return;
       }
-
+ kony.application.dismissLoadingScreen();
       var productList = responseData.products;
 
       //flxShipping: {isVisible: record.freeShipping},
@@ -205,5 +206,88 @@ define({
 
     //     this.view.toolbarMenu.flxBack.setVisibility(true);
     //     this.getCategories(categoriesId);
+  },
+   menuFunction: function () {
+    var self = this;
+    function moveCallback() {}
+    if (this.view.humburgerMenu.left === "-80%") {
+      self.view.flxMain.animate(
+        kony.ui.createAnimation({
+          100: {
+            left: "80%",
+            stepConfig: {
+              timingFunction: kony.anim.EASE,
+            },
+          },
+        }),
+        {
+          delay: 0,
+          iterationCount: 1,
+          fillMode: kony.anim.FILL_MODE_FORWARDS,
+          duration: 0.25,
+        },
+        {
+          animationEnd: moveCallback,
+        }
+      );
+      self.view.humburgerMenu.animate(
+        kony.ui.createAnimation({
+          100: {
+            left: "0%",
+            stepConfig: {
+              timingFunction: kony.anim.EASE,
+            },
+          },
+        }),
+        {
+          delay: 0,
+          iterationCount: 1,
+          fillMode: kony.anim.FILL_MODE_FORWARDS,
+          duration: 0.25,
+        },
+        {
+          animationEnd: moveCallback,
+        }
+      );
+    } else {
+      self.view.flxMain.animate(
+        kony.ui.createAnimation({
+          100: {
+            left: "0%",
+            stepConfig: {
+              timingFunction: kony.anim.EASE,
+            },
+          },
+        }),
+        {
+          delay: 0,
+          iterationCount: 1,
+          fillMode: kony.anim.FILL_MODE_FORWARDS,
+          duration: 0.25,
+        },
+        {
+          animationEnd: moveCallback,
+        }
+      );
+      self.view.humburgerMenu.animate(
+        kony.ui.createAnimation({
+          100: {
+            left: "-80%",
+            stepConfig: {
+              timingFunction: kony.anim.EASE,
+            },
+          },
+        }),
+        {
+          delay: 0,
+          iterationCount: 1,
+          fillMode: kony.anim.FILL_MODE_FORWARDS,
+          duration: 0.25,
+        },
+        {
+          animationEnd: moveCallback,
+        }
+      );
+    }
   },
 });

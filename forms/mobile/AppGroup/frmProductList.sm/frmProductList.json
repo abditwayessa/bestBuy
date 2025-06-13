@@ -39,7 +39,7 @@
     },
     "canUpdateUI": true,
     "children": [
-        "flxProductList",
+        "flxMain",
         "ErrorPopup",
         "humburgerMenu"
     ],

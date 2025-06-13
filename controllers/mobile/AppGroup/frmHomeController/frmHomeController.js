@@ -74,7 +74,6 @@ define({
           var paths = responseData.categories[0].path;
           var categories = response.categories;
         } else {
-          alert("No sub");
           kony.store.setItem(
             "categoryID",
             JSON.stringify(

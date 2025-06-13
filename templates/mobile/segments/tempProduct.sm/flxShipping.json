@@ -44,7 +44,7 @@
     "id": "flxShipping",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "bfd01c0ed930495ba1e53a2f2dd4a14b",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",

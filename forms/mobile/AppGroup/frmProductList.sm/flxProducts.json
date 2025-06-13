@@ -48,7 +48,7 @@
     "kuid": "b51e41cb2cab4ceb88f3634722c9f12d",
     "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxProductList",
+    "parent": "flxMain",
     "pf": "frmProductList",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
