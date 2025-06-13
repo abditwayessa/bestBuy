@@ -1,0 +1,28 @@
+{
+    "AS_Form_j6c38aa639fc45e3a2ddbfe0e07fb905": {
+        "id": "AS_Form_j6c38aa639fc45e3a2ddbfe0e07fb905",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmShoppingCart",
+            "type": "forms",
+            "platform": "",
+            "KUID": "ec72554459e548dda2da7093eb26b716"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "INVOKE_FUNCTION__f2218f1510a446dd9c2497894aa803c6",
+            "type": "INVOKE_FUNCTION",
+            "sequenceKUID": "onInit",
+            "display": "onInit",
+            "inputparams": [],
+            "parentId": null,
+            "callbackType": null,
+            "disabled": null,
+            "source": "controller"
+        }]
+    }
+}

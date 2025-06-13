@@ -1,0 +1,83 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizListBox",
+    "DNDConfig": null,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        3,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Please Select",
+    "_skin_": "s52c630dc1b841ae8d6b3d9c8a6182fe",
+    "_top_": {
+        "type": "string",
+        "value": "3%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "contentalignment": 4,
+    "disabledSkins": {
+        "focusSkin": "s5c4abc27b4749d1863f518880cc2595"
+    },
+    "dropdownimage": "listboxarw.png",
+    "groupcells": false,
+    "id": "lbxImageSize",
+    "info": null,
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "c2aad31adcf54652b0295a54c0309a5b",
+    "masterdata": [
+        [
+            "lb1",
+            "Placeholder One"
+        ],
+        [
+            "lb2",
+            "Placeholder Two"
+        ],
+        [
+            "lb3",
+            "Placeholder Three"
+        ]
+    ],
+    "name": "kony.ui.ListBox",
+    "parent": "flxProductImageDetail",
+    "pf": "frmProductImage",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "selectedkey": null,
+    "selectedkeys": null,
+    "selectedkeyvalue": null,
+    "selectedkeyvalues": null,
+    "size": 18,
+    "viewconfig": {
+        "toggleViewConfig": {
+            "viewStyle": 0
+        }
+    },
+    "viewtype": 0,
+    "wType": "ListBox",
+    "zindex": 1
+}

@@ -1,0 +1,170 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "_data_": [
+        {
+            "imgMenuLogo": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "appmenuhome.png"
+            },
+            "lblMenuName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Home"
+            }
+        },
+        {
+            "imgMenuLogo": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "appmenustore.png"
+            },
+            "lblMenuName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Stores"
+            }
+        },
+        {
+            "imgMenuLogo": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "appmenucart.png"
+            },
+            "lblMenuName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Cart"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "240dp"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "02",
+    "focusedindex": null,
+    "focuseditem": null,
+    "groupcells": false,
+    "hasSections": false,
+    "id": "segHumbergurMenu",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "none"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "b075757bb4164bd68770f379e6e9c028",
+    "masterdata": {},
+    "mobile": {
+        "_data_": [
+            {
+                "imgMenuLogo": {
+                    "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                    "src": "appmenuhome.png"
+                },
+                "lblMenuName": {
+                    "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                    "text": "Home"
+                }
+            },
+            {
+                "imgMenuLogo": {
+                    "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                    "src": "appmenustore.png"
+                },
+                "lblMenuName": {
+                    "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                    "text": "Stores"
+                }
+            },
+            {
+                "imgMenuLogo": {
+                    "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                    "src": "appmenucart.png"
+                },
+                "lblMenuName": {
+                    "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                    "text": "Cart"
+                }
+            }
+        ],
+        "rowTemplateId": "a0637be3a2834a998347ceaaa1dc347d",
+        "rowtemplate": "flxHumburgerMenuRow",
+        "widgetdatamap": {
+            "flxHumburgerMenuRow": "flxHumburgerMenuRow",
+            "imgMenuLogo": "imgMenuLogo",
+            "lblMenuName": "lblMenuName"
+        }
+    },
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "humburgerMenu",
+    "pf": "userwidgetmodel",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowcounter": 2,
+    "rowfocusskin": "s1617027537447f4aeb55848db0f637c",
+    "rowskin": "sb880d5ebe754760b0e0359f122e2dc3",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionheaderskin": "s7b9a535d1764dc0ba492e6c95fe911f",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "separatorcolor": "aaaaaa00",
+    "separatorrequired": true,
+    "separatorthickness": 0,
+    "showscrollbars": false,
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "flxHumburgerMenuRow": "flxHumburgerMenuRow",
+        "imgMenuLogo": "imgMenuLogo",
+        "lblMenuName": "lblMenuName"
+    },
+    "zindex": 1
+}

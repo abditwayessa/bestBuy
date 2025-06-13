@@ -1,0 +1,183 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "_children_": [],
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "sd2f811fd9404344b378701707352893",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "areflexpropsreferenced": false,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "clipbounds": false,
+    "containerweight": 0,
+    "dataDiffs": {
+        "btnBack": {
+            "__events__": {
+                "ide_onClick": "AS_Button_dbc0a20a671e4c77a0adaf956d7efba5"
+            },
+            "__info__": {
+                "kuid": "d425d0b4746440a5972f9e22c7cefc7a",
+                "srcKUID": "hf9c54b9dc284b6a895e1bfecdded595",
+                "wType": "Button"
+            }
+        },
+        "btnMenu": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "baabe56a7e1b484aaa0ab5ab99f76677",
+                "srcKUID": "i42bbc01995642b5af671bb1bd066a7f",
+                "wType": "Button"
+            }
+        },
+        "btnSearch": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "c42db3aca01d4a23b7b6e967628c3314",
+                "srcKUID": "ef938727946b445981f44815365de0ca",
+                "wType": "Button"
+            }
+        },
+        "flxBack": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "a2779ff0c8f84926a4f337a404a12ec2",
+                "srcKUID": "g4565f1dea034eeba849eaf56217f2fc",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxDivider": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d01c36e2abb04a34b96c688d81d17ad3",
+                "srcKUID": "jc3165270f554f229cfba06821bf3de2",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxLogo": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e6277c02ec4f49cd9882654a354b645b",
+                "srcKUID": "f96d4adeddd6418ba6dec23a48749998",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxMenu": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "g87c8ffce00a4784af4f696b0c103efe",
+                "srcKUID": "h6b3ef7c9074490f8abe9e15ca14f757",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxSearch": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "d30a1af4dbb44d1d89e5288fc305471e",
+                "srcKUID": "bef43249a7db4bc8bbde060f5118bad7",
+                "wType": "FlexContainer"
+            },
+            "isVisible": false
+        },
+        "imgBack": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "e0ab7e29b01e429e8982b0ca78346a31",
+                "srcKUID": "e6a2ee316d834eadaf7129d27efa998f",
+                "wType": "Image"
+            },
+            "src": "ic_menu_back.png"
+        },
+        "imgLogo": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "fd9cbec76d0d4d5f998ce45822cbadb0",
+                "srcKUID": "d0f9e50f969c4ae79c6416a5413c694f",
+                "wType": "Image"
+            },
+            "src": "bestbuy.png"
+        },
+        "imgMenu": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "gb18404a14d047cab5a9ec4e9f3659a6",
+                "srcKUID": "af616625e822488794bf9afa1b4894c0",
+                "wType": "Image"
+            },
+            "src": "humburger.png"
+        },
+        "imgSearch": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "b9c77ceb50ad4b33a7dccaf5c19c5da8",
+                "srcKUID": "if28ba26da504ac89024192f6e48e666",
+                "wType": "Image"
+            }
+        },
+        "toolbarMenu": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "e3eacabdf3b648f79d07fffbd28b6b41",
+                "srcKUID": "c8be7de5d2d84b0a8bda6e9bec016963",
+                "wType": "FlexContainer"
+            },
+            "autogrowMode": {
+                "Default": 0
+            },
+            "height": {
+                "Default": {
+                    "type": "string",
+                    "value": "100%"
+                }
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "toolbarMenu",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "isvisible": true,
+    "kuid": "e3eacabdf3b648f79d07fffbd28b6b41",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "flxMenus",
+    "pf": "frmProductList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "c8be7de5d2d84b0a8bda6e9bec016963",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}

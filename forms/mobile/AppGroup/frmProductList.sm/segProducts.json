@@ -1,0 +1,349 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "_data_": [
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        },
+        {
+            "imgProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "bestbuy.png"
+            },
+            "lblFreeShipping": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "!!! Free Shipping !!!"
+            },
+            "lblProductName": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "$ "
+            },
+            "lblProductReview": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Avg User Rating:"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "85.17%"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "95%"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerweight": 100,
+    "counter": "09",
+    "editstyle": "none",
+    "enabledictionary": false,
+    "focusedindex": null,
+    "focuseditem": null,
+    "groupcells": false,
+    "hasSections": false,
+    "hiddencolumns": {
+        "sku": "text"
+    },
+    "id": "segProducts",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "editStyle": "icon",
+            "enableDictionary": false,
+            "indicator": "rowselect",
+            "progressIndicatorColor": "grey"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "d6bc61e5573042c9a576db3311128502",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom",
+        "vdistance": 1
+    },
+    "parent": "flxProducts",
+    "pf": "frmProductList",
+    "progressindicatorcolor": "grey",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "be94a7a0937f4ed18bb72fd742af8360",
+    "rowcounter": 9,
+    "rowfocusskin": "s1617027537447f4aeb55848db0f637c",
+    "rowskin": "se7a14abc533450cb759911dde92448d",
+    "rowtemplate": "flxProductRow",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionHeaderTemplateId": null,
+    "sectionheaderskin": "s7b9a535d1764dc0ba492e6c95fe911f",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "selectionbehaviorconfig": null,
+    "separatorcolor": "b1b1b164",
+    "separatorrequired": true,
+    "separatorthickness": 3,
+    "showscrollbars": false,
+    "swipeContext": {
+        "currentPage": 0,
+        "imageWidth": 1111,
+        "widthRatio": 0
+    },
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "flxProductImg": "flxProductImg",
+        "flxProductRawDetail": "flxProductRawDetail",
+        "flxProductRow": "flxProductRow",
+        "flxProductRowDetail": "flxProductRowDetail",
+        "flxShipping": "flxShipping",
+        "imgProduct": "imgProduct",
+        "lblFreeShipping": "lblFreeShipping",
+        "lblProductName": "lblProductName",
+        "lblProductPrice": "lblProductPrice",
+        "lblProductReview": "lblProductReview"
+    },
+    "zindex": 1
+}

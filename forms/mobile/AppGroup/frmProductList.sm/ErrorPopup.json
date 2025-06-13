@@ -1,0 +1,88 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "_children_": [],
+    "_height_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "s2d30fe3c2cb434bb88c916ad5db9fe1",
+    "_top_": {
+        "type": "string",
+        "value": "10%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "areflexpropsreferenced": false,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "clipbounds": false,
+    "containerweight": 0,
+    "dataDiffs": {
+        "ErrorPopup": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "fadaff4c94994de99dee415a4b3615e1",
+                "srcKUID": "f66a3b560c814f7aacb00b0d9b9a9983",
+                "wType": "FlexContainer"
+            }
+        },
+        "flxErrorPopu": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "f9d12a298dbc41f1ae9589c7043ef7b3",
+                "srcKUID": "e6c863dda46f490e8734a6060e00ca01",
+                "wType": "FlexContainer"
+            }
+        },
+        "lblError": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "g09c07f8e71c4bbebbedef0ac47cc20b",
+                "srcKUID": "bb8e2c7c7b24424f9ede7528ae9338e2",
+                "wType": "Label"
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "ErrorPopup",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "isvisible": true,
+    "kuid": "fadaff4c94994de99dee415a4b3615e1",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "frmProductList",
+    "pf": "frmProductList",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "f66a3b560c814f7aacb00b0d9b9a9983",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}

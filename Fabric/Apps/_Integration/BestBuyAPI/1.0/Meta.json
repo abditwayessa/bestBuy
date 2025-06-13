@@ -1,0 +1,5 @@
+{
+  "serviceType" : "integration",
+  "empty" : true,
+  "mapType" : "java.util.HashMap"
+}

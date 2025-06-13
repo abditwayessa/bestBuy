@@ -1,0 +1,30 @@
+{
+    "AS_Form_f68e18f9b9484af48b39b7ffbf16fb80": {
+        "id": "AS_Form_f68e18f9b9484af48b39b7ffbf16fb80",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd29b71949fe4f8cbfb5733a4315eb5a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "NAVIGATE_TO_FORM__ida80d7b3b26485c86c8a605225faef7",
+            "type": "NAVIGATE_TO_FORM",
+            "formId": "frmProductDetail",
+            "friendlyName": "frmProductDetail",
+            "formKUID": "c30b2075f7484029ad59746864100808",
+            "projectName": "BestBuyProject",
+            "mappings": {},
+            "mappingsOrder": [],
+            "enableMappingEditor": true,
+            "package": "AppGroup",
+            "isCustomInput": false
+        }]
+    }
+}

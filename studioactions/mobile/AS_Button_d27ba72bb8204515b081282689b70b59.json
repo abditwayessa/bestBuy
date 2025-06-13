@@ -1,0 +1,76 @@
+{
+    "AS_Button_d27ba72bb8204515b081282689b70b59": {
+        "id": "AS_Button_d27ba72bb8204515b081282689b70b59",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }],
+        "contextObj": {
+            "name": "frmHome",
+            "type": "forms",
+            "platform": "",
+            "KUID": "cd29b71949fe4f8cbfb5733a4315eb5a"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "MOVE_ACTION_cfe3dd4b928c4cada608221e7ce9ead7",
+            "type": "MOVE_ACTION",
+            "itemType": "FORM",
+            "itemId": "frmHome",
+            "widgetId": "flxHome",
+            "itemKUID": "cd29b71949fe4f8cbfb5733a4315eb5a",
+            "widgetKUID": "a5a4d8c8a938457cac73e103ffda49ae",
+            "wType": "FlexContainer",
+            "animationObject": {
+                "left": "80%",
+                "anchorPoint": {},
+                "stepConfig": {
+                    "timingFunction": "kony.anim.EASE"
+                }
+            },
+            "config": {
+                "delay": "0",
+                "iterationCount": 1,
+                "fillMode": "kony.anim.FILL_MODE_FORWARDS",
+                "duration": "250",
+                "direction": "kony.anim.DIRECTION_ALTERNATE"
+            },
+            "start": "Immediately",
+            "parentAnimation": "MOVE_ACTION_faf0d588d8c44c9db6ba014c1469ce97",
+            "animationId": "MOVE_ACTION_cfe3dd4b928c4cada608221e7ce9ead7",
+            "displayAnimationId": "MOVE_ACTION_cfe3dd4b928c4cada608221e7ce9ead7",
+            "forkedPlatform": "all",
+            "widgetPath": "this.view.flxHome"
+        }, {
+            "id": "MOVE_ACTION_faf0d588d8c44c9db6ba014c1469ce97",
+            "type": "MOVE_ACTION",
+            "itemType": "FORM",
+            "itemId": "frmHome",
+            "widgetId": "humburgerMenu",
+            "itemKUID": "cd29b71949fe4f8cbfb5733a4315eb5a",
+            "widgetKUID": "hd07f7da8049493da25807d791916718",
+            "wType": "UserWidgetInstance",
+            "animationObject": {
+                "left": "0%",
+                "anchorPoint": {},
+                "stepConfig": {
+                    "timingFunction": "kony.anim.EASE"
+                }
+            },
+            "config": {
+                "delay": "0",
+                "iterationCount": 1,
+                "fillMode": "kony.anim.FILL_MODE_FORWARDS",
+                "duration": "250",
+                "direction": "kony.anim.DIRECTION_ALTERNATE"
+            },
+            "start": "Immediately",
+            "parentAnimation": "MOVE_ACTION_cfe3dd4b928c4cada608221e7ce9ead7",
+            "animationId": "MOVE_ACTION_faf0d588d8c44c9db6ba014c1469ce97",
+            "displayAnimationId": "MOVE_ACTION_faf0d588d8c44c9db6ba014c1469ce97",
+            "forkedPlatform": "all",
+            "widgetPath": "this.view.humburgerMenu"
+        }]
+    }
+}

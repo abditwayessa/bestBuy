@@ -1,0 +1,86 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizUserWidget",
+    "DNDConfig": null,
+    "_children_": [],
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "-80%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_percent_": true,
+    "_skin_": "sda29324e4bd4a60bd915aa38b5e5567",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "areflexpropsreferenced": false,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "clipbounds": false,
+    "containerweight": 0,
+    "dataDiffs": {
+        "humburgerMenu": {
+            "__events__": {},
+            "__info__": {
+                "isRoot": true,
+                "kuid": "i79cfde76e2f41c1bfde3259ce12594b",
+                "srcKUID": "a70edc9d1f764d319e945855821997b8",
+                "wType": "FlexContainer"
+            },
+            "left": {
+                "Default": {
+                    "type": "string",
+                    "value": "-80%"
+                }
+            }
+        },
+        "segHumbergurMenu": {
+            "__events__": {},
+            "__info__": {
+                "kuid": "j9f8f578b36f47f79d9c5586f285c2e8",
+                "srcKUID": "b075757bb4164bd68770f379e6e9c028",
+                "wType": "Segment"
+            }
+        }
+    },
+    "enablescrolling": true,
+    "id": "humburgerMenu",
+    "info": null,
+    "iscustomlayout": false,
+    "isdatareferenced": false,
+    "isvisible": true,
+    "kuid": "i79cfde76e2f41c1bfde3259ce12594b",
+    "layouttype": 2,
+    "masterType": 0,
+    "name": "kony.ui.UserWidgetInstance",
+    "parent": "flxShoppingCart",
+    "pf": "frmShoppingCart",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "sourceUserWidget": "a70edc9d1f764d319e945855821997b8",
+    "wType": "UserWidgetInstance",
+    "zindex": 1
+}
