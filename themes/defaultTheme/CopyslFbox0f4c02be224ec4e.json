@@ -10,18 +10,21 @@
   "border_color": "000000ff",
   "border_style": "plain",
   "border_type": 0,
-  "border_width": 1,
+  "border_width": 0,
   "desktopweb": {
     "font_name": "Helvetica"
   },
   "ipad": {
     "font_name": "System"
   },
+  "iphone": {
+    "font_name": "System"
+  },
   "isDefaultSkin": false,
   "kiosk": {
     "font_name": "None"
   },
-  "kuid": "sf103cd34a6a456e9566782cf239fbf1",
+  "kuid": "s6f0b5be9e274cacb9bc9ebd09e9ed08",
   "spaan": {
     "font_name": "Helvetica"
   },
@@ -43,7 +46,7 @@
   "tabrcandroid": {
     "font_name": "default"
   },
-  "wType": "Segment",
+  "wType": "FlexContainer",
   "watchos": {
     "font_name": "System"
   },

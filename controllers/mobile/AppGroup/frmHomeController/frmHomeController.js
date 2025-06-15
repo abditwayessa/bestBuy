@@ -1,30 +1,78 @@
+/**
+ * @Controller: frmHomeController
+ * @Author: Abdi T. Wayessa
+ * @Description:
+ * This controller manages category navigation and interaction for the home screen of the app.
+ * It loads subcategories via BestBuyAPI integration, handles navigation to the product list,
+ * search/filter animations, back button logic, and hamburger menu transitions.
+ *
+ * Features:
+ * - Category drill-down navigation and caching
+ * - Animated transitions (hamburger menu, segment animation, search panel)
+ * - Search input with optional rating filter
+ * - Smooth backtracking and storage support via kony.store
+ * - Segment data binding with animation
+ */
+
 define({
   navigationTracker: [],
-
   responseDatas: [],
+  categoriesPaths: [], // Used for category paths
+  categoriesData: [], // Used for subcategory data
 
-  categoriesPaths: [], //in use for path
-
-  categoriesData: [], //in use for subcategories
-
+  /**
+   * @description Initializes event listeners and loads initial categories.
+   */
   onInit: function () {
-    kony.ui.makeAffineTransform()
-
     this.view.segCategories.onRowClick = this.onRowClicked;
     this.view.toolbarMenu.btnBack.onClick = this.onBackClicked;
     this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
     this.view.toolbarMenu.btnSearch.onClick = this.openAndCloseSearch;
     this.view.btnCancel.onClick = this.closeSearch;
     this.view.txtSearch.onDone = this.searchProduct;
-    this.view.error.btnRetry.onClick = this.getCategories;
+    this.getCategories("cat00000");
   },
+
+  /**
+   * @description Pre-show lifecycle event. Displays a loading screen and sets up initial state.
+   */
   onPreShow: function () {
     kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
     this.rateSelection();
-    this.getCategories();
   },
-  getCategories: function (id) {
 
+  /**
+   * @description Post-show lifecycle event. Handles animation for segments and loads data.
+   */
+  onPostShow: function () {
+    var self = this;
+    this.segAnimation();
+
+    if (kony.application.getPreviousForm("frmProductList")) {
+      var nextToLastIndex = 0;
+      var categoriesDataFromStores = kony.store.getItem("categoriesList");
+      self.categoriesData = categoriesDataFromStores || [];
+
+      if (self.categoriesData.length > 1) {
+        nextToLastIndex = self.categoriesData.length - 1;
+      }
+
+      var categoriesList = self.categoriesData[nextToLastIndex];
+      var filteredRecords = categoriesList.map((record) => ({
+        lblCategories: record.name,
+        lblId: record.id,
+      }));
+
+      self.view.segCategories.setData(filteredRecords);
+      kony.application.dismissLoadingScreen();
+    }
+  },
+
+  /**
+   * @description Fetches categories from the API and updates the UI.
+   * @param {string} id - The ID of the category to fetch.
+   */
+  getCategories: function (id) {
     var self = this;
     var serviceName = "BestBuyAPI";
     var client = kony.sdk.getCurrentInstance();
@@ -33,415 +81,212 @@ define({
     var param = { id: id };
 
     function getDataCallback(status, response) {
-      //  all responses
-      const responseData = JSON.parse(JSON.stringify(response));
-      if(response.errmsg){
-        self.view.error.lblError.text = "Network Error! Please try again!";
-        function moveCallback(){}
-
-        self.view.error.animate(
-          kony.ui.createAnimation({
-            100: {
-              left: "0%",
-              stepConfig: {
-                timingFunction: kony.anim.EASE,
-              },
-            },
-          }),
-          {
-            delay: 0,
-            iterationCount: 1,
-            fillMode: kony.anim.FILL_MODE_FORWARDS,
-            duration: 0.25,
-          },
-          {
-            animationEnd: moveCallback,
-          }
-        );
+      if (response.errmsg) {
+        alert("Connection Error!");
         kony.application.dismissLoadingScreen();
         return;
       }
 
-      //    Subcategories extracted
+      var responseData = JSON.parse(JSON.stringify(response));
+
       if (responseData.categories && responseData.categories.length > 0) {
         var firstCategory = responseData.categories[0];
 
-        if (
-          firstCategory.subCategories &&
-          firstCategory.subCategories.length > 0
-        ) {
-          var subcategories = responseData.categories[0].subCategories;
-          var paths = responseData.categories[0].path;
-          var categories = response.categories;
+        if (firstCategory.subCategories && firstCategory.subCategories.length > 0) {
+          var subcategories = firstCategory.subCategories;
+          var paths = firstCategory.path;
+          var categories = responseData.categories;
         } else {
-          kony.store.setItem(
-            "categoryID",
-            JSON.stringify(
-              self.categoriesPaths[self.categoriesPaths.length - 1].id,
-              null,
-              2
-            )
-          );
-          //           kony.store.setItem("categoryID", id);
-          kony.store.setItem(
-            "categoryName",
-            JSON.stringify(
-              self.categoriesPaths[self.categoriesPaths.length - 1].name,
-              null,
-              2
-            )
-          );
-
-          //           self.categoriesPaths.pop();
-          //           self.categoriesData.pop();
-          var ntf = new kony.mvc.Navigation("frmProductList");
-          ntf.navigate();
+          self.updateCategoryDataAndNavigate();
           return;
-          //           alert("No subcategories.");
         }
       } else {
-        kony.store.setItem(
-          "categoryID",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].id,
-            null,
-            2
-          )
-        );
-        //         kony.store.setItem("categoryID",id);
-        kony.store.setItem(
-          "categoryName",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].name,
-            null,
-            2
-          )
-        );
-
-        //               self.categoriesPaths.pop();
-        //               self.categoriesData.pop();
-        var ntf = new kony.mvc.Navigation("frmProductList");
-        ntf.navigate();
-
+        self.updateCategoryDataAndNavigate();
         return;
       }
 
-      self.categoriesPaths = [];
-
-      for (var i = 0; i < paths.length; i++) {
-        self.categoriesPaths.push(paths[i]);
-      }
-
+      self.categoriesPaths = paths;
       self.categoriesData.push(subcategories);
-
       self.responseDatas.push(subcategories);
+
       var filteredRecords = subcategories.map((record) => ({
         lblCategories: record.name,
         lblId: record.id,
       }));
 
-      if (
-        Array.isArray(categories) &&
-        categories.length > 0 &&
-        Array.isArray(categories[0].subCategories) &&
-        categories[0].subCategories.length > 0
-      ) {
-        console.log("Abdi :  Subcategories found!");
-      } else {
-        console.log("Abdi :  No subcategories found.");
-      }
-
       var names = "Home";
       if (self.categoriesPaths.length > 1) {
-        names =
-          "Home -> " +
-          self.categoriesPaths
-          .slice(1)
-          .map((item) => item.name)
-          .join(" -> ");
+        names = "Home -> " + self.categoriesPaths.slice(1).map((item) => item.name).join(" -> ");
       }
 
       if (subcategories.length < 3) {
-        kony.store.setItem(
-          "categoryID",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].id,
-            null,
-            2
-          )
-        );
-        kony.store.setItem(
-          "categoryName",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].name,
-            null,
-            2
-          )
-        );
-        kony.store.setItem(
-          "categoryIDToBack",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 2].id,
-            null,
-            2
-          )
-        );
-
-        self.categoriesPaths.pop();
-        self.categoriesData.pop();
-        var ntf = new kony.mvc.Navigation("frmProductList");
-        ntf.navigate();
-        //         console.log("Abdi : " + JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].id, null, 2));
+        self.updateCategoryDataAndNavigate();
       } else {
         self.view.lblPage.text = names;
-
         self.view.segCategories.setData(filteredRecords);
-
         kony.application.dismissLoadingScreen();
       }
     }
 
-    getCategorieService = mfintegrationsecureinvokerasync(
-      param,
-      serviceName,
-      operationName,
-      getDataCallback
-    );
+    mfintegrationsecureinvokerasync(param, serviceName, operationName, getDataCallback);
   },
-  onRowClicked: function (
-    seguiWidget,
-    sectionNumber,
-    rowNumber,
-    selectedState
-  ) {
-    var self = this;
-    kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
-    var categoriesId = this.view.segCategories.selectedRowItems[0].lblId;
 
-    var pathInfos = self.navigationTracker.reduce(
-      (acc, val) => acc.concat(val),
-      []
-    );
-    const names = pathInfos.slice(1).map((item) => item.name);
+  /**
+   * @description Updates category data and navigates to the product list.
+   */
+  updateCategoryDataAndNavigate: function () {
+    var self = this;
+    kony.store.setItem("categoryID", JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].id));
+    kony.store.setItem("categoryName", JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].name));
+
+    var ntf = new kony.mvc.Navigation("frmProductList");
+    ntf.navigate();
+  },
+
+  /**
+   * @description Handles row click in category segment.
+   * @param {object} seguiWidget - The segment widget.
+   * @param {number} sectionNumber - The section number.
+   * @param {number} rowNumber - The row number.
+   * @param {boolean} selectedState - The selected state.
+   */
+  onRowClicked: function (seguiWidget, sectionNumber, rowNumber, selectedState) {
+    var self = this;
+    kony.application.showLoadingScreen("sknBluryBackground","Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN,true,true, {});
+    var categoriesId = this.view.segCategories.selectedRowItems[0].lblId;
 
     this.getCategories(categoriesId);
     this.view.toolbarMenu.flxBack.setVisibility(true);
+
+    if (kony.store.getItem("categoriesList")) {
+      kony.store.removeItem("categoriesList");
+    }
+    kony.store.setItem("categoriesList", self.categoriesData);
   },
+
+  /**
+   * @description Handles back button click and navigates through categories.
+   */
   onBackClicked: function () {
     var self = this;
-    var categoriesIdForBack;
-
     var nextToLastIndex = 0;
+
     if (self.categoriesPaths.length > 1) {
       self.categoriesPaths.pop();
       nextToLastIndex = self.categoriesPaths.length - 1;
     }
-    if (nextToLastIndex == 0) {
+
+    if (nextToLastIndex === 0) {
       this.view.toolbarMenu.flxBack.setVisibility(false);
     }
-    categoriesIdForBack = self.categoriesPaths[nextToLastIndex].id;
+
     var names = "Home";
     if (self.categoriesPaths.length > 1) {
-      names =
-        "Home -> " +
-        self.categoriesPaths
-        .slice(1)
-        .map((item) => item.name)
-        .join(" -> ");
+      names = "Home -> " + self.categoriesPaths.slice(1).map((item) => item.name).join(" -> ");
     }
 
     self.view.lblPage.text = names;
-
     this.getCache();
-    //     this.getCategories(categoriesIdForBack);
   },
+
+  /**
+   * @description Retrieves cached categories data from local storage.
+   */
   getCache: function () {
     var self = this;
-    var nextToLastIndex = 0;
+    var categoriesDataFromStores = kony.store.getItem("categoriesList");
 
-    if (self.categoriesData.length > 1) {
+    if (self.categoriesData.length === 0 && categoriesDataFromStores) {
+      self.categoriesData.push(categoriesDataFromStores);
+    } else if (self.categoriesData.length > 0) {
       self.categoriesData.pop();
-      nextToLastIndex = self.categoriesData.length - 1;
-    }
+      var nextToLastIndex = self.categoriesData.length - 1;
+      var categoriesList = self.categoriesData[nextToLastIndex];
+      var filteredRecords = categoriesList.map((record) => ({
+        lblCategories: record.name,
+        lblId: record.id,
+      }));
 
-    var categoriesList = self.categoriesData[nextToLastIndex];
-    var filteredRecords = categoriesList.map((record) => ({
-      lblCategories: record.name,
-      lblId: record.id,
-    }));
-    self.view.segCategories.setData(filteredRecords);
+      self.view.segCategories.setData(filteredRecords);
+    }
   },
+
+  /**
+   * @description Toggles the visibility of the side menu.
+   */
   menuFunction: function () {
     var self = this;
-    function moveCallback() {}
+    var animationConfig = {
+      delay: 0,
+      iterationCount: 1,
+      fillMode: kony.anim.FILL_MODE_FORWARDS,
+      duration: 0.25,
+    };
+
     if (this.view.humburgerMenu.left === "-80%") {
       self.view.flxMain.animate(
         kony.ui.createAnimation({
-          100: {
-            left: "80%",
-            stepConfig: {
-              timingFunction: kony.anim.EASE,
-            },
-          },
+          100: { left: "80%", stepConfig: { timingFunction: kony.anim.EASE } },
         }),
-        {
-          delay: 0,
-          iterationCount: 1,
-          fillMode: kony.anim.FILL_MODE_FORWARDS,
-          duration: 0.25,
-        },
-        {
-          animationEnd: moveCallback,
-        }
+        animationConfig
       );
       self.view.humburgerMenu.animate(
         kony.ui.createAnimation({
-          100: {
-            left: "0%",
-            stepConfig: {
-              timingFunction: kony.anim.EASE,
-            },
-          },
+          100: { left: "0%", stepConfig: { timingFunction: kony.anim.EASE } },
         }),
-        {
-          delay: 0,
-          iterationCount: 1,
-          fillMode: kony.anim.FILL_MODE_FORWARDS,
-          duration: 0.25,
-        },
-        {
-          animationEnd: moveCallback,
-        }
+        animationConfig
       );
     } else {
       self.view.flxMain.animate(
         kony.ui.createAnimation({
-          100: {
-            left: "0%",
-            stepConfig: {
-              timingFunction: kony.anim.EASE,
-            },
-          },
+          100: { left: "0%", stepConfig: { timingFunction: kony.anim.EASE } },
         }),
-        {
-          delay: 0,
-          iterationCount: 1,
-          fillMode: kony.anim.FILL_MODE_FORWARDS,
-          duration: 0.25,
-        },
-        {
-          animationEnd: moveCallback,
-        }
+        animationConfig
       );
       self.view.humburgerMenu.animate(
         kony.ui.createAnimation({
-          100: {
-            left: "-80%",
-            stepConfig: {
-              timingFunction: kony.anim.EASE,
-            },
-          },
+          100: { left: "-80%", stepConfig: { timingFunction: kony.anim.EASE } },
         }),
-        {
-          delay: 0,
-          iterationCount: 1,
-          fillMode: kony.anim.FILL_MODE_FORWARDS,
-          duration: 0.25,
-        },
-        {
-          animationEnd: moveCallback,
-        }
+        animationConfig
       );
     }
   },
+
+  /**
+   * @description Opens the search bar with an animation.
+   */
   openAndCloseSearch: function () {
     var self = this;
 
-    function openSearchCallback() {}
     self.view.flxSearch.animate(
-      kony.ui.createAnimation({
-        100: {
-          left: "0%",
-          stepConfig: {
-            timingFunction: kony.anim.EASE,
-          },
-        },
-      }),
-      {
-        delay: 0,
-        iterationCount: 1,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: 0.55,
-      },
-      {
-        animationEnd: openSearchCallback,
-      }
+      kony.ui.createAnimation({ 100: { left: "0%", stepConfig: { timingFunction: kony.anim.EASE } } }),
+      { delay: 0, iterationCount: 1, fillMode: kony.anim.FILL_MODE_FORWARDS, duration: 0.55 }
     );
     self.view.flxCategories.animate(
-      kony.ui.createAnimation({
-        100: {
-          top: "4%",
-          stepConfig: {
-            timingFunction: kony.anim.EASE,
-          },
-        },
-      }),
-      {
-        delay: 0,
-        iterationCount: 1,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: 0.55,
-        direction: kony.anim.DIRECTION_ALTERNATE,
-      },
-      {
-        animationEnd: openSearchCallback,
-      }
+      kony.ui.createAnimation({ 100: { top: "4%", stepConfig: { timingFunction: kony.anim.EASE } } }),
+      { delay: 0, iterationCount: 1, fillMode: kony.anim.FILL_MODE_FORWARDS, duration: 0.55, direction: kony.anim.DIRECTION_ALTERNATE }
     );
   },
+
+  /**
+   * @description Closes the search bar with an animation.
+   */
   closeSearch: function () {
     var self = this;
 
-    function closeSearchCallback() {}
     self.view.flxSearch.animate(
-      kony.ui.createAnimation({
-        100: {
-          left: "100%",
-          stepConfig: {
-            timingFunction: kony.anim.EASE,
-          },
-        },
-      }),
-      {
-        delay: 0,
-        iterationCount: 1,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: 0.55,
-      },
-      {
-        animationEnd: closeSearchCallback,
-      }
+      kony.ui.createAnimation({ 100: { left: "100%", stepConfig: { timingFunction: kony.anim.EASE } } }),
+      { delay: 0, iterationCount: 1, fillMode: kony.anim.FILL_MODE_FORWARDS, duration: 0.55 }
     );
     self.view.flxCategories.animate(
-      kony.ui.createAnimation({
-        100: {
-          top: "0%",
-          stepConfig: {
-            timingFunction: kony.anim.EASE,
-          },
-        },
-      }),
-      {
-        delay: 0,
-        iterationCount: 1,
-        fillMode: kony.anim.FILL_MODE_FORWARDS,
-        duration: 0.55,
-        direction: kony.anim.DIRECTION_ALTERNATE,
-      },
-      {
-        animationEnd: closeSearchCallback,
-      }
+      kony.ui.createAnimation({ 100: { top: "0%", stepConfig: { timingFunction: kony.anim.EASE } } }),
+      { delay: 0, iterationCount: 1, fillMode: kony.anim.FILL_MODE_FORWARDS, duration: 0.55, direction: kony.anim.DIRECTION_ALTERNATE }
     );
   },
+
+  /**
+   * @description Populates the rate filter dropdown.
+   */
   rateSelection: function () {
     this.view.lbxFilter.masterData = [
       [" ", "<Select a value>"],
@@ -453,62 +298,55 @@ define({
     ];
     this.view.lbxFilter.selectedKey = " ";
   },
-  searchProduct: function(){
+
+  /**
+   * @description Initiates product search based on the user input.
+   */
+  searchProduct: function () {
     this.closeSearch();
     var searchData = this.view.txtSearch.text;
     var rateData = this.view.lbxFilter.selectedKey;
-    this.closeSearch();
-    console.log("Abdi Search : " + searchData);
-    console.log("Abdi Rate : " + rateData);
+
     kony.store.setItem("searchData", searchData);
     kony.store.setItem("searchRate", rateData);
+
     this.view.txtSearch.text = "";
-    this.view.lbxFilter.selectedKey="";
+    this.view.lbxFilter.selectedKey = "";
+
     var ntf = new kony.mvc.Navigation("frmProductList");
     ntf.navigate();
-
   },
-  setAnimationforSeg: function() {
-    // Create two transform objects
+
+  /**
+   * @description Defines the animation applied to the categories segment.
+   */
+  segAnimation: function () {
     var transformObject1 = kony.ui.makeAffineTransform();
     var transformObject2 = kony.ui.makeAffineTransform();
 
-    // Start from 0% width (scaleX = 0), keep full height (scaleY = 1)
     transformObject1.scale(0, 1); // Start collapsed horizontally
     transformObject2.scale(1, 1); // End at full width
 
-    // Define the animation steps
     var animationObject = kony.ui.createAnimation({
-      "0": { 
-        "transform": transformObject1, 
-        "stepConfig": { "timingFunction": kony.anim.EASE_IN }
-      },
-      "100": { 
-        "transform": transformObject2, 
-        "stepConfig": { "timingFunction": kony.anim.EASE_OUT }
-      }
+      0: { transform: transformObject1, stepConfig: { timingFunction: kony.anim.EASE_IN } },
+      100: { transform: transformObject2, stepConfig: { timingFunction: kony.anim.EASE_OUT } },
     });
 
-    // Animation configuration
     var animationConfig = {
-      duration: 0.5, // Half a second for smooth transition
-      fillMode: kony.anim.FILL_MODE_FORWARDS
+      duration: 0.5, 
+      fillMode: kony.anim.FILL_MODE_FORWARDS,
     };
 
-    // Optional callback when animation ends
     var animationCallbacks = {
-      "animationEnd": function() { kony.print("Animation Finished!"); }
+      animationEnd: function () {},
     };
 
-    // Combine everything into one animation definition
     var animationDefObject = {
       definition: animationObject,
       config: animationConfig,
-      callbacks: animationCallbacks
+      callbacks: animationCallbacks,
     };
 
-    // Apply the animation to segment when it becomes visible
     this.view.segCategories.setAnimations({ visible: animationDefObject });
   },
-
 });

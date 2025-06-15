@@ -221,6 +221,7 @@
     },
     "containerweight": 100,
     "counter": "09",
+    "disabledSkins": {},
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
@@ -256,7 +257,7 @@
     "retainselection": false,
     "rowTemplateId": "d8b9ae641f3e4a1a98454731365c4c51",
     "rowcounter": 9,
-    "rowfocusskin": "s1617027537447f4aeb55848db0f637c",
+    "rowfocusskin": "sf103cd34a6a456e9566782cf239fbf1",
     "rowskin": "sf103cd34a6a456e9566782cf239fbf1",
     "rowtemplate": "Flex0a623ec66f2d04e",
     "screenlevelwidget": false,
@@ -276,7 +277,7 @@
     "showscrollbars": false,
     "swipeContext": {
         "currentPage": 0,
-        "imageWidth": 1099,
+        "imageWidth": 1105,
         "widthRatio": 0
     },
     "viewtype": "pageview",

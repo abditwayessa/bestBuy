@@ -17,6 +17,7 @@ define({
       listBoxData.push([rel, displayName]);
     }
     self.view.lbxImageSize.masterData = listBoxData;
+    self.view.lbxImageSize.selectedKey = imageArray[0].rel;
   },
   onSelected: function(){
     var self = this;

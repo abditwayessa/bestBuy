@@ -1,11 +1,12 @@
 {
   "subType" : "customapp",
-  "description" : "Abdi-BestBuy",
+  "description" : "Abdi- BestBuy",
   "version" : "1.0",
   "intSvcs" : [ {
     "name" : "BestBuyAPI",
     "version" : "1.0",
-    "etag" : "fee903e8-55cb-4ed2-b3fe-12abfe8f5f1d"
+    "etag" : "128de396-7a6f-4633-a1ab-44397b9123a0"
   } ],
+  "identity" : [ "BestBuyIdentitys" ],
   "identitySvcConf" : "{\"session_idle_timeout_mins\":20,\"session_max_duration_mins\":360,\"show_security_attributes\":false,\"is_integrity_enabled\":false,\"auto_extend\":true}"
 }

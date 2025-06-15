@@ -51,9 +51,12 @@
     "access_pimdomain_messages": "false",
     "access_shared": "false",
     "access_sms_mms": "false",
+    "addWatchBackgroundListenerToReceiveDataPayload": "false",
+    "addWatchBackgroundListenerToReceiveMessagePayload": "false",
     "allJoyn": "false",
     "allowselfsignedcertificate": "false",
     "andmaxsdkkey": "None",
+    "andminsdkkey": "5.0 (21)",
     "androidInstallLocation": "Auto",
     "androidInstallLocnPref": "false",
     "android_allowselfsignedcertificates": "None",
@@ -68,6 +71,7 @@
     "androidscreenresizeable": "false",
     "androidscreensmall": "true",
     "androidwear_allowselfsignedcertificates": "None",
+    "andtargetsdkkey": "12.0 (31)",
     "andwearapppackagekey": "com.orgname.BestBuyProject",
     "andwearappversioncode": "1",
     "andwearmaxsdkkey": "None",
@@ -260,6 +264,9 @@
     "codeGeneration": "false",
     "contacts": "false",
     "cordovaModified": false,
+    "cordovaVersionInfo": {
+        "useGlobalCordova": false
+    },
     "createdVizVersion": "9.7.46",
     "createdgaversion": "9.7.46",
     "currentgaversion": "9.7.46",
@@ -311,6 +318,7 @@
     "extendTop": "false",
     "fbxfolderpathkey": "",
     "fgcolorkey": "255,255,255",
+    "generateAppBundle": false,
     "generateJavaCodeForForms": "false",
     "genericexceptionalert": "false",
     "gradle_properties_attrs": "",
@@ -360,13 +368,17 @@
     "isA11yConfigEnabled": false,
     "isDpScaleFactor": true,
     "isI18nConfigEnabled": false,
+    "isI18nLayoutConfigEnabled": false,
     "isMVC": true,
     "isNewAppWithRespectToAndroidPackageName": "true",
     "isNewAppWithRespectToAndroidWearPackageName": "true",
+    "isScreenShotDisabledForTestReports": false,
     "keyAlias": "",
     "keyAliasandwear": "",
+    "keyPassword": "",
     "keyStoreFilePath": "",
     "keyStoreFilePathandwear": "",
+    "keyStorePassword": "",
     "kfAppInfo": {
         "095e47fa-520b-4ad4-8cc2-f14d9e0b33f9": {
             "appName": "Abdi- BestBuy",
@@ -381,7 +393,7 @@
             "version": "1.0"
         },
         "f35e13f0-0017-4320-9db7-6497e0f61263": {
-            "appName": "BestBuyA",
+            "appName": "Abdi- BestBuy",
             "baseId": "2db67ac6-d3e3-4ac6-86ef-216f7f0d58d0",
             "id": "2db67ac6-d3e3-4ac6-86ef-216f7f0d58d0",
             "version": "1.0"
@@ -401,6 +413,7 @@
     "mwportkey": "",
     "objects3D": "false",
     "optimizeAssetLoading": false,
+    "organizationidsso": "",
     "pasteboardtype": "systemlevel",
     "pathkey": "",
     "pathkey_andwear": "",
@@ -411,8 +424,8 @@
     "permissions": {
         "android": {
             "ACCESS_CHECKIN_PROPERTIES": "false",
-            "ACCESS_COARSE_LOCATION": "false",
-            "ACCESS_FINE_LOCATION": "false",
+            "ACCESS_COARSE_LOCATION": "true",
+            "ACCESS_FINE_LOCATION": "true",
             "ACCESS_LOCATION_EXTRA_COMMANDS": "false",
             "ACCESS_MOCK_LOCATION": "false",
             "ACCESS_NETWORK_STATE": "true",
@@ -669,6 +682,7 @@
     "protectedmodeenabled_android": "false",
     "protectedmodeenabled_androidwear": "false",
     "protectedmodeenabled_ios": "false",
+    "prototype": {},
     "proximity": "false",
     "readOnly": [],
     "read_device_identifying_information": "false",
@@ -706,6 +720,11 @@
     "support64bitandwear": "false",
     "supportX86Devices": "false",
     "supportX86Devicesandwear": "false",
+    "support_arm_32bit": false,
+    "support_arm_64bit": true,
+    "support_x86_32bit": false,
+    "support_x86_64bit": false,
+    "tabletBreakPointInInches": "6",
     "tags": {
         "android": {
             "activity_child_tags": "",
