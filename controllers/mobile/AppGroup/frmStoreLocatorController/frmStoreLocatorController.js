@@ -84,7 +84,6 @@ define({
       });
       console.log("Abdi Map: " +   JSON.stringify(mappedMarkers, null, 2));
       var locationDatas = JSON.stringify(mappedMarkers, null, 2);
-      self.view.mapStores.mapKey
       self.view.mapStores.locationData = mappedMarkers;
       kony.application.dismissLoadingScreen();
 

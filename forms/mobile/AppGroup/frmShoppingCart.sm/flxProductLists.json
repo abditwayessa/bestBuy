@@ -1,9 +1,8 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizRichText",
     "DNDConfig": null,
     "_height_": {
         "type": "string",
-        "value": "100%"
+        "value": "220dp"
     },
     "_left_": {
         "type": "string",
@@ -15,14 +14,15 @@
         0,
         0
     ],
+    "_orientation_": 6,
     "_padding_": [
         0,
         0,
         0,
         0
     ],
-    "_skin_": "s1a2d386be9647428451798021a072f3",
-    "_text_": "RichTex",
+    "_percent_": true,
+    "_skin_": "sd2f811fd9404344b378701707352893",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -31,22 +31,31 @@
         "type": "string",
         "value": "100%"
     },
-    "_wrapping_": 2,
+    "allboxes": [],
     "canUpdateUI": true,
+    "children": [
+        "segCarts",
+        "lblTotalPrice",
+        "lblSavedAmount"
+    ],
+    "clipbounds": false,
     "containerweight": 100,
-    "contentalignment": 4,
-    "id": "rtxtProductDetail",
+    "enablescrolling": true,
+    "id": "flxProductLists",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "beff2722c2b54f67a210b1c4c3163dc9",
-    "linkskin": "s312cec735f84c5cbccab3b968ee6264",
-    "name": "kony.ui.RichText",
-    "parent": "flxProductsInDetail",
-    "pf": "frmProductDetail",
+    "kuid": "b537fa418e6244f8ac8bafad6f43956b",
+    "layouttype": 4,
+    "name": "kony.ui.FlexContainer",
+    "parent": "flxCart",
+    "pf": "frmShoppingCart",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
-    "wType": "RichText",
-    "widgetalignment": 5,
+    "retainflowhorizontalalignment": false,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetalignment": 1,
     "zindex": 1
 }

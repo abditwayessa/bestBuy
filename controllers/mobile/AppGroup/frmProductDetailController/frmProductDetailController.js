@@ -121,7 +121,7 @@ define({
         self.onBackClick();
         return;
       }
-      
+       var onSale = responseData.products[0].onSale;
       var rate = responseData.products[0].customerReviewAverage;
       var imageArray;
       kony.store.setItem("productThumb", responseData.products[0].mediumImage);
@@ -132,7 +132,8 @@ define({
         sku:productId,
         name: responseData.products[0].name,
         salePrice: responseData.products[0].salePrice,
-        onSale:  responseData.products[0].onSale
+        onSale:  responseData.products[0].onSale,
+        regularPrice:responseData.products[0].regularPrice
       }
       self.productObject = "";
       self.productObject = cartObject;
