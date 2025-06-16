@@ -21,7 +21,7 @@
         0,
         0
     ],
-    "_skin_": "s24d8f985f20416086db9a7a363b24cc",
+    "_skin_": "sb78b813d76b43c1b1735917d846d4cb",
     "_text_": "Address: ",
     "_top_": {
         "type": "string",
@@ -39,6 +39,7 @@
         }
     },
     "canUpdateUI": true,
+    "containerId": true,
     "containerweight": 100,
     "contentalignment": 4,
     "id": "lblAddressForDetail",

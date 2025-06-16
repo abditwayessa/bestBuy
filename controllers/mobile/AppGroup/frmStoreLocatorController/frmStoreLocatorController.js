@@ -1,12 +1,11 @@
 define({ 
 
   onInit: function(){
-    this.view.btnSearch.onClick = this.loadStoreMap;
-
+    this.view.btnSearch.onClick = this.searchLocation;
     this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
   },
   preShow: function(){
-    this.loadStoreMap();
+    //     this.loadStoreMap();
   },
   loadStoreMap: function(){
     var locData = [
@@ -36,163 +35,62 @@ define({
     ];
     this.view.mapStores.locationData = locData;
   },
-  searchLocation:function(){
-     var self = this;
+  searchLocation: function(){
+    var self = this;
+    kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
+
     var searchData = this.view.txtLocation.text;
     var serviceName = "BestBuyAPI";
     var client = kony.sdk.getCurrentInstance();
     var integrationSvc = client.getIntegrationService(serviceName);
-    var operationName = "getCategories";
-    var param = { inputText: searchData };
-    
-    
-    
+    var operationName = "getLocation";
+    var param = { location: searchData };
+
     function getDataCallback(status, response) {
-      //  all responses
       const responseData = JSON.parse(JSON.stringify(response));
       if(response.errmsg){
         alert("Network Error");
+
+        kony.application.dismissLoadingScreen();
+        //         kony.application.destroyForm("frmHome");
+        //         var ntf = new kony.mvc.Navigation("frmHome");
+        //         ntf.navigate();
         return;
       }
+      if(response.stores.length < 1){
+        alert("Location not found!");
+        kony.application.dismissLoadingScreen();
+        return;
+      }
+      var validStores = response.stores.filter(function (store) {
+        return store.lat !== undefined && store.lng !== undefined || store.lat !== "" && store.lng !== "";
+      });
 
-      //    Subcategories extracted
-      if (responseData.categories && responseData.categories.length > 0) {
-        var firstCategory = responseData.categories[0];
 
-        if (
-          firstCategory.subCategories &&
-          firstCategory.subCategories.length > 0
-        ) {
-          var subcategories = responseData.categories[0].subCategories;
-          var paths = responseData.categories[0].path;
-          var categories = response.categories;
-        } else {
-          kony.store.setItem(
-            "categoryID",
-            JSON.stringify(
-              self.categoriesPaths[self.categoriesPaths.length - 1].id,
-              null,
-              2
-            )
-          );
-          //           kony.store.setItem("categoryID", id);
-          kony.store.setItem(
-            "categoryName",
-            JSON.stringify(
-              self.categoriesPaths[self.categoriesPaths.length - 1].name,
-              null,
-              2
-            )
-          );
-
-          //           self.categoriesPaths.pop();
-          //           self.categoriesData.pop();
-          var ntf = new kony.mvc.Navigation("frmProductList");
-          ntf.navigate();
-          return;
-          //           alert("No subcategories.");
+      var mappedMarkers = validStores.map((store) => {
+        return {
+          lat: store.lat ? store.lat.toString() : "0",
+          lon: store.lng ? store.lng.toString() : "0",
+          calloutData: {
+            lblAddressForDetail: "Address:",
+            lblAddressName: store.name,
+            lblAddressDetail: store.address,
+            imgCompass: "compass.png"
+          },
+          image: "pinb.png",
+          showCallout: true 
         }
-      } else {
-        kony.store.setItem(
-          "categoryID",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].id,
-            null,
-            2
-          )
-        );
-        //         kony.store.setItem("categoryID",id);
-        kony.store.setItem(
-          "categoryName",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].name,
-            null,
-            2
-          )
-        );
 
-        //               self.categoriesPaths.pop();
-        //               self.categoriesData.pop();
-        var ntf = new kony.mvc.Navigation("frmProductList");
-        ntf.navigate();
+      });
+      console.log("Abdi Map: " +   JSON.stringify(mappedMarkers, null, 2));
+      var locationDatas = JSON.stringify(mappedMarkers, null, 2);
+      self.view.mapStores.mapKey
+      self.view.mapStores.locationData = mappedMarkers;
+      kony.application.dismissLoadingScreen();
 
-        return;
-      }
-
-      self.categoriesPaths = [];
-
-      for (var i = 0; i < paths.length; i++) {
-        self.categoriesPaths.push(paths[i]);
-      }
-
-      self.categoriesData.push(subcategories);
-
-      self.responseDatas.push(subcategories);
-      var filteredRecords = subcategories.map((record) => ({
-        lblCategories: record.name,
-        lblId: record.id,
-      }));
-
-      if (
-        Array.isArray(categories) &&
-        categories.length > 0 &&
-        Array.isArray(categories[0].subCategories) &&
-        categories[0].subCategories.length > 0
-      ) {
-        console.log("Abdi :  Subcategories found!");
-      } else {
-        console.log("Abdi :  No subcategories found.");
-      }
-
-      var names = "Home";
-      if (self.categoriesPaths.length > 1) {
-        names =
-          "Home -> " +
-          self.categoriesPaths
-          .slice(1)
-          .map((item) => item.name)
-          .join(" -> ");
-      }
-
-      if (subcategories.length < 3) {
-        kony.store.setItem(
-          "categoryID",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].id,
-            null,
-            2
-          )
-        );
-        kony.store.setItem(
-          "categoryName",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 1].name,
-            null,
-            2
-          )
-        );
-        kony.store.setItem(
-          "categoryIDToBack",
-          JSON.stringify(
-            self.categoriesPaths[self.categoriesPaths.length - 2].id,
-            null,
-            2
-          )
-        );
-
-        self.categoriesPaths.pop();
-        self.categoriesData.pop();
-        var ntf = new kony.mvc.Navigation("frmProductList");
-        ntf.navigate();
-        //         console.log("Abdi : " + JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].id, null, 2));
-      } else {
-        self.view.lblPage.text = names;
-
-        self.view.segCategories.setData(filteredRecords);
-      }
     }
 
-    getCategorieService = mfintegrationsecureinvokerasync(
+    mfintegrationsecureinvokerasync(
       param,
       serviceName,
       operationName,

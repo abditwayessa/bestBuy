@@ -16,6 +16,9 @@ define({
 //     this.getReviewData(this.productsId);
     this.getProductDetailAndReview();
   },
+  onNavigate:function(){
+//     this.menuFunction();
+  },
   getProductDetail: function () {
     var self = this;
     var productId = kony.store.getItem("productId");
@@ -33,25 +36,6 @@ define({
         const errorResponse =  response.errmsg;
         alert("Connection Error!");
         kony.application.dismissLoadingScreen();
-        //         self.view.ErrorPopup.lblError.text = errorResponse;
-        //         function errorCallback() {}
-        //         self.view.ErrorPopup.animate(
-        //           kony.ui.createAnimation({
-        //             "100": {	
-        //               "left": "0%",
-        //               "stepConfig": {
-        //                 "timingFunction": kony.anim.EASE
-        //               }
-        //             }
-        //           }), {
-        //             "delay": 0,
-        //             "iterationCount": 1,
-        //             "fillMode": kony.anim.FILL_MODE_FORWARDS,
-        //             "duration": 0.0,
-        //             "direction": kony.anim.DIRECTION_ALTERNATE
-        //           }, {
-        //             "animationEnd": errorCallback
-        //           });
         return;
       }
       var onSale = responseData.products[0].onSale;
@@ -59,15 +43,6 @@ define({
       var imageArray;
       kony.store.setItem("productThumb", responseData.products[0].mediumImage);
       var cartObject = {};
-      //       var orderNumber;
-      //       if(!kony.store.getItem("cart")){
-      //         orderNumber=0;
-      //         console.log("Abdi kony no ");
-      //       }else{
-      //         orderNumber = kony.store.getItem("cart").length;
-      //          console.log("Abdi kony len: " + kony.store.getItem("cart").length);
-      //       }
-
 
       cartObject = {
         orderNum:"",
@@ -118,7 +93,7 @@ define({
       kony.application.dismissLoadingScreen();
     }
 
-    getProductDetailService = mfintegrationsecureinvokerasync(
+    mfintegrationsecureinvokerasync(
       param,
       serviceName,
       operationName,
@@ -146,8 +121,7 @@ define({
         self.onBackClick();
         return;
       }
-
-      var onSale = responseData.products[0].onSale;
+      
       var rate = responseData.products[0].customerReviewAverage;
       var imageArray;
       kony.store.setItem("productThumb", responseData.products[0].mediumImage);
@@ -157,7 +131,8 @@ define({
         orderNum:"",
         sku:productId,
         name: responseData.products[0].name,
-        salePrice: responseData.products[0].salePrice
+        salePrice: responseData.products[0].salePrice,
+        onSale:  responseData.products[0].onSale
       }
       self.productObject = "";
       self.productObject = cartObject;
@@ -356,7 +331,7 @@ define({
       //       console.log("Abdi review length: " + JSON.stringify(reviewIndex, null, 2));
     }
 
-    getCategorieService = mfintegrationsecureinvokerasync(
+    mfintegrationsecureinvokerasync(
       param,
       serviceName,
       operationName,
@@ -480,17 +455,5 @@ define({
       );
     }
   },
-  navigateToCart: function( seguiWidget, sectionNumber, rowNumber, selectedState){
-    var selectedMenu =this.view.humburgerMenu.segHumbergurMenu.selectedRowItems[0].lblMenuName;
-    console.log("Abdi Menu : " + selectedMenu);
-    kony.application.destroyForm("frmShoppingCart");
-    var ntf = new kony.mvc.Navigation("frmShoppingCart");
-    ntf.navigate();
-    //     if(selectedMenu === "Cart"){
-
-    //       var ntf = new kony.mvc.Navigation("frmShoppingCart");
-    //       ntf.navigate();
-    //     }
-
-  }
+  
 });

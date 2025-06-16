@@ -156,7 +156,7 @@
     "layouttype": 2,
     "masterType": 0,
     "name": "kony.ui.UserWidgetInstance",
-    "parent": "flxProductImage",
+    "parent": "flxMain",
     "pf": "frmProductImage",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

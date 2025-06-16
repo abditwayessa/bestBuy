@@ -5,10 +5,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "10dp"
-    },
     "_margin_": [
         1,
         1,
@@ -21,11 +17,11 @@
         0,
         0
     ],
-    "_skin_": "sb7fde965b95419792e7754476e1a57d",
-    "_text_": "Porter Ranch",
+    "_skin_": "sb0b7505d3854f09a1339b0a6bb00f45",
+    "_text_": "Login",
     "_top_": {
         "type": "string",
-        "value": "30dp"
+        "value": "5%"
     },
     "_width_": {
         "type": "ref",
@@ -39,14 +35,13 @@
         }
     },
     "canUpdateUI": true,
-    "centery": {
+    "centerx": {
         "type": "string",
-        "value": "62%"
+        "value": "50%"
     },
-    "containerId": true,
     "containerweight": 100,
-    "contentalignment": 5,
-    "id": "lblAddressName",
+    "contentalignment": 4,
+    "id": "lblLogin",
     "info": null,
     "ipad": {
         "psp": {
@@ -59,11 +54,11 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "d55a4e2005934210871b824a80a6c9a5",
+    "isvisible": false,
+    "kuid": "c1443fc9f44a4835beb99444e5d9c0ad",
     "name": "kony.ui.Label",
-    "parent": "flxAddressName",
-    "pf": "tempMap",
+    "parent": "flxLogin",
+    "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

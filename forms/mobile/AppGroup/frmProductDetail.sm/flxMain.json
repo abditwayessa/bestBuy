@@ -22,7 +22,7 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "sd2f811fd9404344b378701707352893",
+    "_skin_": "sda29324e4bd4a60bd915aa38b5e5567",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -35,11 +35,7 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flxProducts",
-        "flxAddToCart",
-        "flxDivider",
-        "flxReview",
-        "toolbarMenu"
+        "flxProductDetail"
     ],
     "clipbounds": false,
     "containerweight": 100,
@@ -48,10 +44,10 @@
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "f0322ebd03224b05a65ab58993d1e367",
+    "kuid": "af34ebda1c064ecf93f4452b99894c65",
     "layouttype": 2,
     "name": "kony.ui.FlexContainer",
-    "parent": "flxProductDetail",
+    "parent": "frmProductDetail",
     "pf": "frmProductDetail",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

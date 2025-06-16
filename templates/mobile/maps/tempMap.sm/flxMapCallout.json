@@ -29,7 +29,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "200dp"
+        "value": "250dp"
     },
     "allboxes": [],
     "autogrowmode": 0,

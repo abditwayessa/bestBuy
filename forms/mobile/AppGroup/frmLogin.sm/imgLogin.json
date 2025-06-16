@@ -2,13 +2,17 @@
     "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "_base64_": null,
+    "_bottom_": {
+        "type": "string",
+        "value": "20dp"
+    },
     "_height_": {
         "type": "string",
         "value": "50dp"
     },
     "_left_": {
         "type": "string",
-        "value": "15dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -23,31 +27,37 @@
         0
     ],
     "_skin_": "s15ced58d87948e59733a8c590fc0599",
-    "_src_": "compass.png",
+    "_src_": "bestbuy.png",
     "_top_": {
         "type": "string",
-        "value": "15dp"
+        "value": "40dp"
     },
     "_width_": {
         "type": "string",
         "value": "50dp"
     },
+    "actionsInfo": {
+        "skipMapping": true,
+        "widgetPropertyName": "src"
+    },
     "canUpdateUI": true,
-    "containerId": true,
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerweight": 100,
-    "id": "imgCompass",
+    "id": "imgLogin",
     "imagescalemode": 1,
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ga3b9f3bd6974b1fa420ca5cf3c2ddd0",
+    "kuid": "e517182eb8e743778972f5942d44c479",
     "name": "kony.ui.Image2",
-    "parent": "flxAddressName",
-    "pf": "tempMap",
+    "parent": "flexlogin",
+    "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "srcType": 1,
     "wType": "Image",
-    "widgetalignment": 5,
-    "zindex": 1
+    "widgetalignment": 5
 }

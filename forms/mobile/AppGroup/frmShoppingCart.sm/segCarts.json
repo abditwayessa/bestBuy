@@ -226,6 +226,7 @@
     "groupcells": false,
     "hasSections": false,
     "hiddencolumns": {
+        "onSale": "text",
         "orderNum": "text",
         "sku": "text"
     },

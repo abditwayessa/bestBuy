@@ -33,6 +33,7 @@ define({
         sku: record.sku,
         imgRemoveProduct: "cartremoveitem.png",
         orderNum:record.orderNum
+        
       }
 
     });

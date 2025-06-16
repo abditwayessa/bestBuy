@@ -15,12 +15,6 @@
         0
     ],
     "_percent_": true,
-    "_pxMenuIndex": [
-        0,
-        1,
-        0,
-        1
-    ],
     "_skin_": "s5b448e937564e2b99154c638f11e3d0",
     "_title_": null,
     "addWidgetsdone": false,
@@ -28,7 +22,7 @@
     "android": {
         "needAppMenu": false,
         "psp": {
-            "windowSoftInputMode": 2
+            "windowSoftInputMode": 1
         }
     },
     "androidwearos": {
@@ -37,18 +31,15 @@
             "windowSoftInputMode": 1
         }
     },
-    "bounces": false,
     "canUpdateUI": true,
     "children": [
-        "flxMain",
-        "ErrorPopup",
-        "humburgerMenu"
+        "flxMain"
     ],
     "containerweight": 100,
     "controllerInfo": {
         "default": {
             "channel": "mobile",
-            "name": "frmProductDetailController"
+            "name": "frmLoginController"
         }
     },
     "currentLocale": "default",
@@ -58,11 +49,8 @@
     "device": "iPhone13",
     "displayorientation": 1,
     "enabledforidletimeout": false,
-    "enablescrolling": false,
-    "friendlyName": "frmProductDetail",
-    "id": "frmProductDetail",
-    "ide_init": "AS_Form_gd5ed2bff27b44d2acd8a9c5dd6df3ac",
-    "ide_preShow": "AS_Form_e6e065c35c1045419ff8abc942929dca",
+    "friendlyName": "frmLogin",
+    "id": "frmLogin",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,
@@ -80,7 +68,7 @@
             "titleBarAttributes": {
                 "barStyle": 0,
                 "hidesBackButton": false,
-                "kuid": "jdb5c044a877480c8d8035f7673e4634",
+                "kuid": "e1c4eb2a10924004957cedacac4db195",
                 "leftBarButtonItems": [],
                 "leftItemsSupplementBackButton": true,
                 "prompt": "",
@@ -91,7 +79,7 @@
                         "info": {
                             "title": "Edit"
                         },
-                        "kuid": "f68a8ab90e314528b13f3f8353e58933",
+                        "kuid": "d7817e3795ca4aaf801eb09dd2c202fe",
                         "style": 0,
                         "tintColor": "4b88f100",
                         "type": 1
@@ -108,7 +96,7 @@
     "kiosk": {
         "needAppMenu": false
     },
-    "kuid": "c30b2075f7484029ad59746864100808",
+    "kuid": "ebc05030434e46c38f65494747a46488",
     "layouttype": 2,
     "name": "kony.ui.Form2",
     "needappmenu": false,

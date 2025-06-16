@@ -7,8 +7,7 @@ define(function () {
       selectedState
     ) {
       var self = this;
-      var selectedMenu =this.view.segHumbergurMenu.selectedRowItems[0]
-      .menuId;
+      var selectedMenu =this.view.segHumbergurMenu.selectedRowItems[0].menuId;
       var currentForm = kony.application.getCurrentForm().id;
 
       switch(selectedMenu){
@@ -19,13 +18,13 @@ define(function () {
             kony.application.destroyForm("frmHome");
             var ntf = new kony.mvc.Navigation("frmHome");
             ntf.navigate();
-            this.hideHumburger();
           }
           break;
         case "store":   
           if(currentForm === "frmStoreLocator"){
             this.hideHumburger();
           }else{
+            kony.application.destroyForm("frmStoreLocator");
             var ntf = new kony.mvc.Navigation("frmStoreLocator");
             ntf.navigate();
           }
@@ -36,7 +35,6 @@ define(function () {
           }else{
             var ntf = new kony.mvc.Navigation("frmShoppingCart");
             ntf.navigate();
-            this.hideHumburger();
           }
           break;
         case "logout":

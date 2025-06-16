@@ -54,7 +54,9 @@ define({
     function getDataCallback(status, response) {
       if (response.errmsg) {
         alert("Connection Error!");
+        self.onBackClick();
         kony.application.dismissLoadingScreen();
+        
         return;
       }
 

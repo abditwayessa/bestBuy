@@ -51,6 +51,9 @@
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "screenlevelwidget": false,
+    "spa": {
+        "mapSource": "non-native"
+    },
     "wType": "Map",
     "zindex": 1,
     "zoomlevel": 1

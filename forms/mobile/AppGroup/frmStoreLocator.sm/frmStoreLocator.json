@@ -28,7 +28,7 @@
     "android": {
         "needAppMenu": false,
         "psp": {
-            "windowSoftInputMode": 1
+            "windowSoftInputMode": 2
         }
     },
     "androidwearos": {

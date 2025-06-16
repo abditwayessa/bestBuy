@@ -1,8 +1,8 @@
 {
     "DNDConfig": null,
     "_height_": {
-        "type": "string",
-        "value": "100%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
@@ -31,25 +31,28 @@
         "type": "string",
         "value": "100%"
     },
+    "actionsInfo": {},
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "flxProductImageDetail",
-        "toolbarMenu"
+        "imgLogin",
+        "tbxuserid",
+        "tbxpassword",
+        "btnLOGIN"
     ],
     "clipbounds": false,
     "containerweight": 100,
     "enablescrolling": true,
-    "id": "flxProductImage",
+    "id": "flexlogin",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "b23194abfe574c3ea70f565c6878105f",
-    "layouttype": 2,
+    "kuid": "a0b47606bcab4ad0bcf40a7dcc57705e",
+    "layouttype": 4,
     "name": "kony.ui.FlexContainer",
-    "parent": "frmProductImage",
-    "pf": "frmProductImage",
+    "parent": "flxLogin",
+    "pf": "frmLogin",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,

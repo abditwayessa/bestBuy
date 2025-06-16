@@ -2,6 +2,7 @@ define({
   onInit: function(){
     this.view.lbxImageSize.onSelection = this.onSelected;
     this.view.toolbarMenu.btnBack.onClick = this.onBackClick;
+    this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
   },
   onPreShow: function(){
     this.getProductImage();
@@ -38,5 +39,43 @@ define({
     ntf.navigate();
     kony.store.removeItem("productImage");
     kony.application.destroyForm("frmProductImage");
-  }
+  },
+    menuFunction: function () {
+    var self = this;
+    var animationConfig = {
+      delay: 0,
+      iterationCount: 1,
+      fillMode: kony.anim.FILL_MODE_FORWARDS,
+      duration: 0.25,
+    };
+
+    if (this.view.humburgerMenu.left === "-80%") {
+      self.view.flxMain.animate(
+        kony.ui.createAnimation({
+          100: { left: "80%", stepConfig: { timingFunction: kony.anim.EASE } },
+        }),
+        animationConfig
+      );
+      self.view.humburgerMenu.animate(
+        kony.ui.createAnimation({
+          100: { left: "0%", stepConfig: { timingFunction: kony.anim.EASE } },
+        }),
+        animationConfig
+      );
+    } else {
+      self.view.flxMain.animate(
+        kony.ui.createAnimation({
+          100: { left: "0%", stepConfig: { timingFunction: kony.anim.EASE } },
+        }),
+        animationConfig
+      );
+      self.view.humburgerMenu.animate(
+        kony.ui.createAnimation({
+          100: { left: "-80%", stepConfig: { timingFunction: kony.anim.EASE } },
+        }),
+        animationConfig
+      );
+    }
+  },
+
 });

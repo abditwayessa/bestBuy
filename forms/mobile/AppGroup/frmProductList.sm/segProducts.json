@@ -73,6 +73,7 @@
     "groupcells": false,
     "hasSections": false,
     "hiddencolumns": {
+        "onSale": "text",
         "sku": "text"
     },
     "id": "segProducts",
@@ -122,7 +123,7 @@
     "selectedindex": null,
     "selectedindices": null,
     "selecteditems": null,
-    "selectedsectionindex": null,
+    "selectedsectionindex": 0,
     "selectionbehavior": "default",
     "selectionbehaviorconfig": null,
     "separatorcolor": "5c5c5c64",
