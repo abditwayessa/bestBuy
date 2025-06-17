@@ -59,6 +59,7 @@
     "friendlyName": "frmShoppingCart",
     "id": "frmShoppingCart",
     "ide_init": "AS_Form_j6c38aa639fc45e3a2ddbfe0e07fb905",
+    "ide_postShow": "AS_Form_d681ce32b4e54bb6b71f64166a0e5ba0",
     "info": null,
     "initdone": false,
     "inputaccessoryviewtype": 4,

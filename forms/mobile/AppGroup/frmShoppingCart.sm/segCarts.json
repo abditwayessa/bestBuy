@@ -21,9 +21,6 @@
             "onSale": {
                 "text": ""
             },
-            "orderNum": {
-                "text": ""
-            },
             "sku": {
                 "text": ""
             }
@@ -73,7 +70,6 @@
     "hasSections": false,
     "hiddencolumns": {
         "onSale": "text",
-        "orderNum": "text",
         "sku": "text"
     },
     "id": "segCarts",

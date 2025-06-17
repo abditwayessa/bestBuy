@@ -1,1 +1,30 @@
-{}
+{
+    "BestBuyObject_getCategoriesModel": {
+        "servicename": "BestBuyObject",
+        "serviceid": "55c5c3ba-e117-4d7a-94c8-e41b9fde7c22",
+        "type": "objectsvcs",
+        "objectname": "getCategoriesModel",
+        "objectid": "537"
+    },
+    "BestBuyObject_categories": {
+        "servicename": "BestBuyObject",
+        "serviceid": "55c5c3ba-e117-4d7a-94c8-e41b9fde7c22",
+        "type": "objectsvcs",
+        "objectname": "categories",
+        "objectid": "538"
+    },
+    "BestBuyObject_path": {
+        "servicename": "BestBuyObject",
+        "serviceid": "55c5c3ba-e117-4d7a-94c8-e41b9fde7c22",
+        "type": "objectsvcs",
+        "objectname": "path",
+        "objectid": "539"
+    },
+    "BestBuyObject_subCategories": {
+        "servicename": "BestBuyObject",
+        "serviceid": "55c5c3ba-e117-4d7a-94c8-e41b9fde7c22",
+        "type": "objectsvcs",
+        "objectname": "subCategories",
+        "objectid": "540"
+    }
+}

@@ -207,7 +207,7 @@
     ],
     "_top_": {
         "type": "string",
-        "value": "5%"
+        "value": "10dp"
     },
     "_width_": {
         "type": "string",

@@ -8,6 +8,9 @@ define({
   onPreShow: function(){
 
   },
+  onPostShow: function(){
+    
+  },
   getProductInCart: function(){
 
     var self = this;
@@ -55,7 +58,7 @@ define({
       this.view.lblSavedAmount.text = "You have items that are ON SALE !!! You Saved $" + totalSaved.toFixed(2) + " on this order.";
       this.view.lblSavedAmount.setVisibility(true);
     }else{
-       this.view.lblSavedAmount.setVisibility(false);
+      this.view.lblSavedAmount.setVisibility(false);
     }
     //     JSON.stringify(value, replacer?, value, space?)
     console.log("Abdi Cart list: " +   JSON.stringify(cartArray, null, 2));
@@ -145,5 +148,8 @@ define({
       );
     }
   },
+onNavigate: function(){
+  kony.application.destroyForm("frmShoppingCart");
+}
 
 });
