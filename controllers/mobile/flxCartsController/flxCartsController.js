@@ -18,9 +18,8 @@ define({
 
     for (var i = 0; i < myArray.length; i++) {
       if (myArray.indexOf(myArray[i]) === rowIndex) {
-        myArray.splice(i, 1); // Remove the item
-        alert("Item with orderNum " + rowIndex + " deleted.");
-        break; // Exit the loop after deleting
+        myArray.splice(i, 1);
+        break; 
       }
     }
 

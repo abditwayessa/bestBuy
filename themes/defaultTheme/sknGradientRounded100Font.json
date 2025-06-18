@@ -1,0 +1,100 @@
+{
+  "android": {
+    "font_name": "default",
+    "font_size": 100,
+    "isForked": false
+  },
+  "androidwearos": {
+    "font_name": "default",
+    "font_size": 100,
+    "isForked": false
+  },
+  "background_gradient_bottom_color": "5078ddff",
+  "background_gradient_top_color": "acdffdff",
+  "background_style": "vg",
+  "bg_type": "two",
+  "border_color": "000000ff",
+  "border_radius": 100,
+  "border_style": "custom",
+  "border_type": 0,
+  "border_width": 2,
+  "desktopweb": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "fontSizeInPx": false,
+  "font_color": "000000ff",
+  "font_name": "iphoneSystem",
+  "font_size": 100,
+  "font_style": "normal",
+  "font_weight": "400",
+  "ipad": {
+    "font_name": "System",
+    "font_size": 100,
+    "isForked": false
+  },
+  "iphone": {
+    "font_name": "System",
+    "font_size": 100,
+    "isForked": false
+  },
+  "isDefaultSkin": false,
+  "kiosk": {
+    "font_name": "None",
+    "font_size": 100,
+    "isForked": false
+  },
+  "kuid": "sbfb09d4a8a64ec9baad1548a500b560",
+  "spaan": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "spaandroidtablet": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "spaip": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "spaipad": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "spawindowstablet": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "spawinphone8": {
+    "font_name": "Helvetica",
+    "font_size": 100,
+    "isForked": false
+  },
+  "tabrcandroid": {
+    "font_name": "default",
+    "font_size": 100,
+    "isForked": false
+  },
+  "wType": "Button",
+  "watchos": {
+    "font_name": "System",
+    "font_size": 100,
+    "isForked": false
+  },
+  "windows8": {
+    "font_name": "None",
+    "font_size": 100,
+    "isForked": false
+  },
+  "winphone8": {
+    "font_name": "None",
+    "font_size": 100,
+    "isForked": false
+  }
+}

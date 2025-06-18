@@ -7,17 +7,17 @@ define({
     this.view.btnMore.onClick = this.openProductImage;
     this.view.toolbarMenu.btnMenu.onClick = this.menuFunction;
     this.view.btnDrop.onClick = this.onDropDownandUp;
-//     this.getReviewData(kony.store.getItem("productId"));
+    //     this.getReviewData(kony.store.getItem("productId"));
     this.view.btnAddToCart.onClick = this.addToCart;
     //     this.view.humburgerMenu.segHumbergurMenu.onRowClick = this.navigateToCart;
   },
   onPreShow: function () {
-//     this.getProductDetail();
-//     this.getReviewData(this.productsId);
+    //     this.getProductDetail();
+    //     this.getReviewData(this.productsId);
     this.getProductDetailAndReview();
   },
   onNavigate:function(){
-//     this.menuFunction();
+    kony.application.destroyForm("frmProductDetail");
   },
   getProductDetailAndReview: function () {
     var self = this;
@@ -40,7 +40,7 @@ define({
         self.onBackClick();
         return;
       }
-       var onSale = responseData.products[0].onSale;
+      var onSale = responseData.products[0].onSale;
       var rate = responseData.products[0].customerReviewAverage;
       var imageArray;
       kony.store.setItem("productThumb", responseData.products[0].mediumImage);
@@ -99,8 +99,8 @@ define({
       self.view.lblTotalReview.text =
         "Total Number Of Reviews: " + reviewCount.length;
       var allReview = responseData.reviews;
-      
-       var filteredRecordsa = allReview.map((record) => ({
+
+      var filteredRecordsa = allReview.map((record) => ({
         lblFeedback: record.comment,
         lblGrade: record.title,
         lblSubmittedBy: "submitted by: " + record.reviewer[0].name,
@@ -130,8 +130,8 @@ define({
       });
 
       self.view.segReview.setData(filteredRecords);
-      
-      
+
+
       kony.application.dismissLoadingScreen();
     }
 
@@ -222,7 +222,7 @@ define({
     console.log("Abdi productInCart : " + JSON.stringify(this.productInCart, null, 2));
     kony.store.setItem("cart", this.productInCart);
     console.log("Abdi KOny store : " + JSON.stringify(kony.store.setItem("cart", this.productInCart), null, 2));
-	alert("Product Added to the Cart Successfully!");
+    alert("Product Added to the Cart Successfully!");
   },
   menuFunction: function () {
     var self = this;
@@ -306,10 +306,6 @@ define({
         }
       );
     }
-  },
-  onNavigate: function(){
-  kony.application.destroyForm("frmProductDetail");
-}
+  }
 
-  
 });
