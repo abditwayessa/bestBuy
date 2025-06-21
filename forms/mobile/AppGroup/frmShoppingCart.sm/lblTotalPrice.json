@@ -7,7 +7,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "205dp"
+        "value": "0dp"
     },
     "_margin_": [
         1,
@@ -22,14 +22,14 @@
         0
     ],
     "_skin_": "s6c726f492114a64b3c67458ad3dcf3f",
-    "_text_": "Label",
+    "_text_": "Total: ",
     "_top_": {
         "type": "string",
-        "value": "20dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "160dp"
+        "value": "50dp"
     },
     "_wrapping_": 2,
     "android": {
@@ -57,7 +57,7 @@
     "isvisible": false,
     "kuid": "adc13c215348413d88877ca8505ea787",
     "name": "kony.ui.Label",
-    "parent": "flxProductLists",
+    "parent": "FlexContainer0bc56865be6c44f",
     "pf": "frmShoppingCart",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,

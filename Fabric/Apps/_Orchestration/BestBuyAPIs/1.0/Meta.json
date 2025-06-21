@@ -1,0 +1,5 @@
+{
+  "serviceType" : "orchestration",
+  "empty" : true,
+  "mapType" : "java.util.HashMap"
+}

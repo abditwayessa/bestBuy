@@ -5,7 +5,17 @@
   "intSvcs" : [ {
     "name" : "BestBuyAPI",
     "version" : "1.0",
-    "etag" : "128de396-7a6f-4633-a1ab-44397b9123a0"
+    "etag" : "16e7ca5b-91f6-4957-9584-a9b7dfdb93ca"
+  } ],
+  "orchSvcs" : [ {
+    "name" : "BestBuyAPIs",
+    "version" : "1.0",
+    "etag" : "93220b7c-28fe-45d6-b077-b570435b1e5f"
+  } ],
+  "objectSvcs" : [ {
+    "name" : "BestBuyObject",
+    "version" : "1.0",
+    "etag" : "30b82162-d3a6-459c-bc81-a31188bf6477"
   } ],
   "identity" : [ "BestBuyIdentitys" ],
   "identitySvcConf" : "{\"session_idle_timeout_mins\":20,\"session_max_duration_mins\":360,\"show_security_attributes\":false,\"is_integrity_enabled\":false,\"auto_extend\":true}"

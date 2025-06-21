@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "categories",
+  "targetObject" : "categories",
+  "relationshipKeys" : [ {
+    "sourceField" : "id",
+    "targetField" : "id",
+    "etag" : "2e54c44c-fdb0-4b4d-a5a3-89d998d1ebac"
+  } ],
+  "name" : "categories_categories",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : false
+} ]

@@ -62,6 +62,7 @@
     "friendlyName": "frmProductDetail",
     "id": "frmProductDetail",
     "ide_init": "AS_Form_gd5ed2bff27b44d2acd8a9c5dd6df3ac",
+    "ide_onHide": "AS_Form_e9028f34873d4244b9b0842088091633",
     "ide_preShow": "AS_Form_e6e065c35c1045419ff8abc942929dca",
     "info": null,
     "initdone": false,

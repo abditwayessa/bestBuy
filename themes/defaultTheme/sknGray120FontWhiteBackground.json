@@ -9,7 +9,7 @@
     "font_size": 120,
     "isForked": false
   },
-  "background_color": "f4f4fe00",
+  "background_color": "f4f4feff",
   "bg_type": "one",
   "border_color": "424242ff",
   "border_style": "plain",
@@ -42,7 +42,7 @@
     "font_size": 120,
     "isForked": false
   },
-  "kuid": "s256c32033a1469facd6eeb92e197bc1",
+  "kuid": "s5082abebbef4d5a985af2f02b2da3b6",
   "spaan": {
     "font_name": "Helvetica",
     "font_size": 120,

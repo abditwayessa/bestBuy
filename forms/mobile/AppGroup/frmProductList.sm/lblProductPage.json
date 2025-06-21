@@ -7,7 +7,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "4%"
+        "value": "0%"
     },
     "_margin_": [
         1,
@@ -16,12 +16,12 @@
         1
     ],
     "_padding_": [
-        0,
+        4,
         0,
         0,
         0
     ],
-    "_skin_": "s256c32033a1469facd6eeb92e197bc1",
+    "_skin_": "s5082abebbef4d5a985af2f02b2da3b6",
     "_text_": "Results for: ",
     "_top_": {
         "type": "string",
@@ -29,7 +29,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "90%"
+        "value": "100%"
     },
     "_wrapping_": 2,
     "android": {
@@ -57,6 +57,7 @@
     "isvisible": true,
     "kuid": "a4d2dfdb701d4d118acee40def70594b",
     "name": "kony.ui.Label",
+    "paddinginpixel": false,
     "parent": "flxProducts",
     "pf": "frmProductList",
     "retaincontentalignment": false,
@@ -64,5 +65,5 @@
     "textstyle": {},
     "tooltip": "",
     "wType": "Label",
-    "zindex": 1
+    "zindex": 2
 }

@@ -9,7 +9,7 @@ define({
 
   },
   onPostShow: function(){
-    
+
   },
   getProductInCart: function(){
 
@@ -21,11 +21,13 @@ define({
       this.view.lblNoProduct.setVisibility(true);
       this.view.segCarts.setVisibility(false);
       this.view.lblTotalPrice.setVisibility(false);
+      this.view.lblAmount.setVisibility(false);
       return;
     }else{
       this.view.lblNoProduct.setVisibility(false);
       this.view.segCarts.setVisibility(true);
-      this.view.lblTotalPrice.setVisibility(true);      
+      this.view.lblTotalPrice.setVisibility(true);  
+      this.view.lblAmount.setVisibility(true);
     }
     var totalValue = 0;
     var totalRegularPrice = 0;
@@ -53,7 +55,7 @@ define({
 
     });
     this.view.segCarts.setData(filteredRecords);
-    this.view.lblTotalPrice.text = "Total: $"+totalValue.toFixed(2);
+    this.view.lblAmount.text = totalValue.toFixed(2);
     if(totalSaved > 0 ){
       this.view.lblSavedAmount.text = "You have items that are ON SALE !!! You Saved $" + totalSaved.toFixed(2) + " on this order.";
       this.view.lblSavedAmount.setVisibility(true);
@@ -148,6 +150,7 @@ define({
       );
     }
   },
+
 onNavigate: function(){
   kony.application.destroyForm("frmShoppingCart");
 }

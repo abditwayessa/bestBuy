@@ -23,7 +23,8 @@ define({
       }
     }
 
-    var totalValue = 0; var totalRegularPrice = 0;
+    var totalValue = 0; 
+    var totalRegularPrice = 0;
     var totalSalePrice = 0;
     var totalSaved = 0
     for(var j = 0; j < myArray.length; j++){
@@ -50,14 +51,16 @@ define({
       currentForm.lblNoProduct.setVisibility(true);
       currentForm.segCarts.setVisibility(false); 
       currentForm.lblTotalPrice.setVisibility(false);
+      currentForm.lblAmount.setVisibility(false);
     }else{
       currentForm.segCarts.setVisibility(true); 
       currentForm.lblTotalPrice.setVisibility(true);
+      currentForm.lblAmount.setVisibility(true);
       currentForm.lblNoProduct.setVisibility(false);     
     }
     console.log("Abdi Data deleted: " + JSON.stringify(myArray, null, 2));
 
-    currentForm.lblTotalPrice.text = "Total: $"+totalValue.toFixed(2);
+    currentForm.lblAmount.text = totalValue.toFixed(2);
     totalSaved = totalRegularPrice - totalSalePrice;
     if(totalSaved > 0 ){
       currentForm.lblSavedAmount.text = "You have items that are ON SALE !!! You Saved $" + totalSaved.toFixed(2) + " on this order.";
@@ -76,6 +79,30 @@ define({
         config: { duration: 0.3, fillMode: kony.anim.FILL_MODE_FORWARDS }
       }
     });
+
+
+    var trans100 = kony.ui.makeAffineTransform();
+    trans100.rotate3D(180, 0, 1, 0);
+    currentForm.lblAmount.animate(
+      kony.ui.createAnimation({
+        "100": {
+          "anchorPoint": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "stepConfig": {
+            "timingFunction": kony.anim.EASE
+          },
+          "transform": trans100
+        }
+      }), {
+        "delay": 0,
+        "iterationCount": 1,
+        "fillMode": kony.anim.FILL_MODE_BACKWARDS,
+        "duration": 0.75
+      }, {
+      });
+
 
     // ✅ Add a timer to delay row deletion after the animation (simulate callback)
     kony.timer.schedule("deleteRowTimer", function () {

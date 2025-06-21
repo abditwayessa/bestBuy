@@ -15,7 +15,6 @@
  */
 
 define({
-  navigationTracker: [],
   responseDatas: [],
   categoriesPaths: [], // Used for category paths
   categoriesData: [], // Used for subcategory data
@@ -37,7 +36,11 @@ define({
    * @description Pre-show lifecycle event. Displays a loading screen and sets up initial state.
    */
   onPreShow: function () {
-    kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
+    kony.timer.schedule("delayTimer", function () {
+      kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
+      kony.timer.cancel("delayTimer");
+    }, 0.1, false);
+
     this.rateSelection();
   },
 
@@ -48,23 +51,40 @@ define({
     var self = this;
     this.segAnimation();
 
-    if (kony.application.getPreviousForm("frmProductList")) {
-      var nextToLastIndex = 0;
-      var categoriesDataFromStores = kony.store.getItem("categoriesList");
-      self.categoriesData = categoriesDataFromStores || [];
+    if(kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)){
+      if (kony.application.getPreviousForm("frmProductList")) {
+        var nextToLastIndex = 0;
+        var categoriesDataFromStores = kony.store.getItem("categoriesList");
+        self.categoriesData = categoriesDataFromStores || [];
 
-      if (self.categoriesData.length > 1) {
-        nextToLastIndex = self.categoriesData.length - 1;
+        if (self.categoriesData.length > 1) {
+          nextToLastIndex = self.categoriesData.length - 1;
+        }
+
+        var categoriesList = self.categoriesData[nextToLastIndex];
+        var filteredRecords = categoriesList.map((record) => ({
+          lblCategories: record.name,
+          lblId: record.id,
+        }));
+
+        self.view.segCategories.setData(filteredRecords);
+        kony.application.dismissLoadingScreen();
       }
+    }else{
+      var alertConfig = {
+        message: "Please connect to the internet",
+        alertType: constants.ALERT_TYPE_INFO,
+        alertTitle: "Connection Error",
+        yesLabel: "OK",
+        noLabel: "",
+        alertHandler: function(response) {
+          if (response) { // OK button clicked
+            kony.application.exit();
+          }
+        }
+      };
 
-      var categoriesList = self.categoriesData[nextToLastIndex];
-      var filteredRecords = categoriesList.map((record) => ({
-        lblCategories: record.name,
-        lblId: record.id,
-      }));
-
-      self.view.segCategories.setData(filteredRecords);
-      kony.application.dismissLoadingScreen();
+      kony.ui.Alert(alertConfig, {});
     }
   },
 
@@ -72,75 +92,101 @@ define({
    * @description Fetches categories from the API and updates the UI.
    * @param {string} id - The ID of the category to fetch.
    */
-  getCategories: function (id) {
-    var self = this;
-    var serviceName = "BestBuyAPI";
-    var client = kony.sdk.getCurrentInstance();
-    var integrationSvc = client.getIntegrationService(serviceName);
-    var operationName = "getCategories";
-    var param = { id: id };
+  getCategories: function (id, catName) {
+    if(kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)){
+      var self = this;
+      var serviceName = "BestBuyAPI";
+      var client = kony.sdk.getCurrentInstance();
+      var integrationSvc = client.getIntegrationService(serviceName);
+      var operationName = "getCategories";
+      var param = { id: id };
+      var catId = id;
+      var catNames = catName;
 
-    function getDataCallback(status, response) {
-      if (response.errmsg) {
-        alert("Connection Error!");
-        kony.application.dismissLoadingScreen();
-        return;
-      }
-
-      var responseData = JSON.parse(JSON.stringify(response));
-
-      if (responseData.categories && responseData.categories.length > 0) {
-        var firstCategory = responseData.categories[0];
-
-        if (firstCategory.subCategories && firstCategory.subCategories.length > 0) {
-          var subcategories = firstCategory.subCategories;
-          var paths = firstCategory.path;
-          var categories = responseData.categories;
-        } else {
-          self.updateCategoryDataAndNavigate();
+      function getDataCallback(status, response) {
+        if (response.errmsg) {
+          alert("Connection Error!");	
+          kony.application.dismissLoadingScreen();
           return;
         }
-      } else {
-        self.updateCategoryDataAndNavigate();
-        return;
+
+        var responseData = JSON.parse(JSON.stringify(response));
+
+        if (responseData.categories && responseData.categories.length > 0) {
+          var firstCategory = responseData.categories[0];
+          if (firstCategory.subCategories && firstCategory.subCategories.length > 0) {
+            var subcategories = firstCategory.subCategories;
+            var paths = firstCategory.path;
+            var categories = responseData.categories;
+          } else {
+            self.updateCategoryDataAndNavigate(catId, catNames);
+            return;
+          }
+        } else if(responseData.categories.length === 0) {
+          self.updateCategoryDataAndNavigate(catId, catNames);
+          return;
+        }
+
+        self.categoriesPaths = paths;
+        self.categoriesData.push(subcategories);
+        self.responseDatas.push(subcategories);
+
+        var filteredRecords = subcategories.map((record) => ({
+          lblCategories: record.name,
+          lblId: record.id,
+        }));
+
+        var names = "Home";
+        if (self.categoriesPaths.length > 1) {
+          names = "Home -> " + self.categoriesPaths.slice(1).map((item) => item.name).join(" -> ");
+        }
+
+        if (subcategories.length < 3) {
+          self.updateCategoryDataAndNavigate(catId, catNames);
+        } else {
+          self.view.lblPage.text = names;
+          self.view.segCategories.setData(filteredRecords);
+          kony.application.dismissLoadingScreen();
+        }
       }
 
-      self.categoriesPaths = paths;
-      self.categoriesData.push(subcategories);
-      self.responseDatas.push(subcategories);
+      mfintegrationsecureinvokerasync(param, serviceName, operationName, getDataCallback);
+    }else{
+      var alertConfig = {
+        message: "Please connect to the internet",
+        alertType: constants.ALERT_TYPE_INFO,
+        alertTitle: "Connection Error",
+        yesLabel: "OK",
+        noLabel: "",
+        alertHandler: function(response) {
+          if (response) { // OK button clicked
+            kony.application.exit();
+          }
+        }
+      };
 
-      var filteredRecords = subcategories.map((record) => ({
-        lblCategories: record.name,
-        lblId: record.id,
-      }));
-
-      var names = "Home";
-      if (self.categoriesPaths.length > 1) {
-        names = "Home -> " + self.categoriesPaths.slice(1).map((item) => item.name).join(" -> ");
-      }
-
-      if (subcategories.length < 3) {
-        self.updateCategoryDataAndNavigate();
-      } else {
-        self.view.lblPage.text = names;
-        self.view.segCategories.setData(filteredRecords);
-        kony.application.dismissLoadingScreen();
-      }
+      kony.ui.Alert(alertConfig, {});
     }
-
-    mfintegrationsecureinvokerasync(param, serviceName, operationName, getDataCallback);
   },
 
   /**
    * @description Updates category data and navigates to the product list.
    */
-  updateCategoryDataAndNavigate: function () {
-    var self = this;
-    kony.store.setItem("categoryID", JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].id));
-    kony.store.setItem("categoryName", JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].name));
+  updateCategoryDataAndNavigate: function (catId, catName) {
 
-    var ntf = new kony.mvc.Navigation("frmProductList");
-    ntf.navigate();
+    if(kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)){
+      var self = this;
+      //     kony.store.setItem("categoryID", JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].id));
+      //     kony.store.setItem("categoryName", JSON.stringify(self.categoriesPaths[self.categoriesPaths.length - 1].name));
+
+      kony.store.setItem("categoryID", catId);
+      kony.store.setItem("categoryName", catName);
+
+      var ntf = new kony.mvc.Navigation("frmProductList");
+      ntf.navigate();
+    }else{
+      alert("Please connect to the internet");
+    }
   },
 
   /**
@@ -154,8 +200,9 @@ define({
     var self = this;
     kony.application.showLoadingScreen("sknBluryBackground","Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN,true,true, {});
     var categoriesId = this.view.segCategories.selectedRowItems[0].lblId;
+    var categoriesName = this.view.segCategories.selectedRowItems[0].lblCategories;
 
-    this.getCategories(categoriesId);
+    this.getCategories(categoriesId, categoriesName);
     this.view.toolbarMenu.flxBack.setVisibility(true);
 
     if (kony.store.getItem("categoriesList")) {
@@ -304,17 +351,31 @@ define({
    */
   searchProduct: function () {
     this.closeSearch();
-    var searchData = this.view.txtSearch.text;
-    var rateData = this.view.lbxFilter.selectedKey;
+    if(this.view.txtSearch.text === "" || this.view.txtSearch.text === null || this.view.txtSearch.text === " "){
+      alert("Please enter your search keyword!");
+      return;
+    }else{
+      if(kony.net.isNetworkAvailable(constants.NETWORK_TYPE_ANY)){
+        kony.application.showLoadingScreen("sknBluryBackground", "Loading...", constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true, {});
 
-    kony.store.setItem("searchData", searchData);
-    kony.store.setItem("searchRate", rateData);
+        var searchData = this.view.txtSearch.text;
+        var rateData = this.view.lbxFilter.selectedKey;
 
-    this.view.txtSearch.text = "";
-    this.view.lbxFilter.selectedKey = "";
+        kony.store.setItem("searchData", searchData);
+        kony.store.setItem("searchRate", rateData);
+        kony.store.setItem("fromSearch", true);
 
-    var ntf = new kony.mvc.Navigation("frmProductList");
-    ntf.navigate();
+        this.view.txtSearch.text = "";
+        this.view.lbxFilter.selectedKey = "";
+
+        var ntf = new kony.mvc.Navigation("frmProductList");
+        ntf.navigate();
+        kony.application.destroyForm("frmHome");
+
+      }else{
+        alert("Please connect to the internet");
+      }
+    }
   },
 
   /**
@@ -348,5 +409,5 @@ define({
     };
 
     this.view.segCategories.setAnimations({ visible: animationDefObject });
-  },
+  }
 });

@@ -8,7 +8,7 @@
         <config-param api-version="" appid="" name="preprocessorRules" value=""/>
         <config-param api-version="" appid="" name="postprocessorRules" value=""/>
         <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
-        <config-param api-version="" appid="" name="endpointUrl" value="https://api.bestbuy.com/v1/products(search=%22$inputText%22&amp;customerReviewAverage%3E%3D$rate)?apiKey=$apiKey&amp;format=json&amp;page=1"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="https://api.bestbuy.com/v1/products(search=%22$inputText%22&amp;customerReviewAverage%3E%3D$rate)?apiKey=$apiKey&amp;format=json&amp;page=$pages&amp;pageSize=10"/>
         <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
         <config-param api-version="" appid="" name="http.method" value="GET"/>
         <config-param api-version="" appid="" name="dataObjectName" value=""/>
@@ -27,6 +27,9 @@
             <accessType></accessType>
         </param>
         <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="rate" order="" paramOrder="3" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="" isExtended="false">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="pages" order="" paramOrder="4" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1" value="" isExtended="false">
             <accessType></accessType>
         </param>
         <stub-param value=""/>
@@ -64,5 +67,11 @@
                 <accessType></accessType>
             </param>
         </dataset>
+        <param datatype="number" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="totalPages" order="" paramOrder="12" parentOrder="0" passnull="false" sms-name="" src="$.totalPages" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="" isExtended="false">
+            <accessType></accessType>
+        </param>
+        <param datatype="number" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="currentPage" order="" paramOrder="13" parentOrder="0" passnull="false" sms-name="" src="$.currentPage" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="" isExtended="false">
+            <accessType></accessType>
+        </param>
     </service-output>
 </service>

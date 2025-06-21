@@ -1,0 +1,99 @@
+{
+  "operationConfig" : {
+    "name" : "getCategories7172",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly",
+      "isExtended" : false
+    } ],
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"request_in\" outputpath=\"request_out\">\n        <set-param inputpath=\"id\" outputpath=\"id\"/>\n    </map>\n</mapper>\n",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"response_in\" outputpath=\"response_out\">\n        <map inputpath=\"categories\" outputpath=\"categories\">\n            <set-param inputpath=\"id\" outputpath=\"id\"/>\n            <set-param inputpath=\"name\" outputpath=\"name\"/>\n        </map>\n    </map>\n</mapper>\n",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"categories\",\"xy\":\"150 100\"},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"BestBuyAPI (1.0).getCategories\",\"xy\":\"770 100\"}],\"linkDataArray\":[{\"category\":\"Mapping\",\"from\":\"source:categories:id:\",\"to\":\"target:id:\",\"fromPort\":\"source:categories:id:\",\"toPort\":\"target:id:\",\"visible\":true,\"common\":true}]}",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"categories\",\"xy\":\"770 100\"},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"BestBuyAPI (1.0).getCategories\",\"xy\":\"150 100\"}],\"linkDataArray\":[{\"category\":\"Mapping\",\"from\":\"source:categories:id:\",\"to\":\"target:categories:id:\",\"fromPort\":\"source:categories:id:\",\"toPort\":\"target:categories:id:\",\"visible\":true,\"common\":true},{\"category\":\"Mapping\",\"from\":\"source:categories:name:\",\"to\":\"target:categories:name:\",\"fromPort\":\"source:categories:name:\",\"toPort\":\"target:categories:name:\",\"visible\":true,\"common\":true}]}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "BestBuyAPI",
+      "serviceVersion" : "1.0",
+      "operationName" : "getCategories"
+    },
+    "relationshipHierarchyMapping" : {
+      "name" : "categories",
+      "children" : [ ],
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false,
+    "mapperData" : [ {
+      "name" : "base mapper1",
+      "order" : 1,
+      "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"request_in\" outputpath=\"request_out\">\n        <set-param inputpath=\"id\" outputpath=\"id\"/>\n    </map>\n</mapper>\n",
+      "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"response_in\" outputpath=\"response_out\">\n        <map inputpath=\"categories\" outputpath=\"categories\">\n            <set-param inputpath=\"id\" outputpath=\"id\"/>\n            <set-param inputpath=\"name\" outputpath=\"name\"/>\n        </map>\n    </map>\n</mapper>\n",
+      "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"categories\",\"xy\":\"150 100\"},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"BestBuyAPI (1.0).getCategories\",\"xy\":\"770 100\"}],\"linkDataArray\":[{\"category\":\"Mapping\",\"from\":\"source:categories:id:\",\"to\":\"target:id:\",\"fromPort\":\"source:categories:id:\",\"toPort\":\"target:id:\",\"visible\":true,\"common\":true}]}",
+      "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"categories\",\"xy\":\"770 100\"},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"BestBuyAPI (1.0).getCategories\",\"xy\":\"150 100\"}],\"linkDataArray\":[{\"category\":\"Mapping\",\"from\":\"source:categories:id:\",\"to\":\"target:categories:id:\",\"fromPort\":\"source:categories:id:\",\"toPort\":\"target:categories:id:\",\"visible\":true,\"common\":true},{\"category\":\"Mapping\",\"from\":\"source:categories:name:\",\"to\":\"target:categories:name:\",\"fromPort\":\"source:categories:name:\",\"toPort\":\"target:categories:name:\",\"visible\":true,\"common\":true}]}",
+      "requestXmlMappingOverride" : false,
+      "responseXmlMappingOverride" : false,
+      "disabled" : false,
+      "applyCommonMapping" : false,
+      "applyRequestCommonMapping" : false,
+      "applyResponseCommonMapping" : false
+    } ]
+  },
+  "enableFrontendUrl" : false,
+  "customVerb" : false
+}

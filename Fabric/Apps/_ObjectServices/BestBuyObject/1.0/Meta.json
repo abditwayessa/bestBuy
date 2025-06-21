@@ -1,0 +1,11 @@
+{
+  "config" : {
+    "metadataSecurity" : "public",
+    "offline" : false,
+    "delete_strategy" : "soft-delete",
+    "uploadCache" : false,
+    "conflict_policy" : "none"
+  },
+  "empty" : true,
+  "mapType" : "java.util.HashMap"
+}

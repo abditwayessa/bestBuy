@@ -1,7 +1,7 @@
 define({
   productsId: "",
   productInCart: [],
-  productObject:"",
+  productObject: "",
   onInit: function () {
     this.view.toolbarMenu.btnBack.onClick = this.onBackClick;
     this.view.btnMore.onClick = this.openProductImage;
@@ -15,9 +15,18 @@ define({
     //     this.getProductDetail();
     //     this.getReviewData(this.productsId);
     this.getProductDetailAndReview();
+    kony.timer.schedule("productDetailIdleTimer", function () {
+      kony.application.destroyForm("frmHome");
+      // Navigate back to Home
+      var ntf = new kony.mvc.Navigation("frmHome");
+      ntf.navigate();
+    }, 60, false); 
   },
-  onNavigate:function(){
+  onNavigate: function(){
     kony.application.destroyForm("frmProductDetail");
+  },
+  onHide: function(){
+      kony.timer.cancel("productDetailIdleTimer");
   },
   getProductDetailAndReview: function () {
     var self = this;
@@ -75,7 +84,7 @@ define({
           "On Sale! $" + responseData.products[0].salePrice;
       } else {
         self.view.lblProductsPrice.text =
-          "$" + responseData.products[0].salePrice;
+          "$" + responseData.products[0].regularPrice;
       }
 
       self.view.lblProductsName.text = responseData.products[0].name;
@@ -96,8 +105,13 @@ define({
 
       //       Review
       const reviewCount = JSON.parse(JSON.stringify(response.reviews));
-      self.view.lblTotalReview.text =
-        "Total Number Of Reviews: " + reviewCount.length;
+      if( reviewCount.length > 0){
+        self.view.lblTotalReview.text =
+          "Total Number Of Reviews: " + reviewCount.length;
+      }else{
+        self.view.lblTotalReview.text =
+          "No reviews";
+      }
       var allReview = responseData.reviews;
 
       var filteredRecordsa = allReview.map((record) => ({

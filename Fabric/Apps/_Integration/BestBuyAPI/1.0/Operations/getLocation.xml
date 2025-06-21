@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<service serviceGroup="" cachable="false" cacheduration="" customOperation="false" description="" endpoint="default" groupType="" id="getLocation" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+<service serviceGroup="" cachable="false" cacheduration="" customOperation="false" description="" endpoint="default" groupType="" id="getLocation" passwordencrypted="false" security="public" type="jsonConnector" smscode="" smsenabled="false">
     <service-config>
         <config-param api-version="" appid="" name="preprocessorname" value=""/>
         <config-param api-version="" appid="" name="postprocessorname" value=""/>

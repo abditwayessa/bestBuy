@@ -1,12 +1,12 @@
 {
     "DNDConfig": null,
     "_height_": {
-        "type": "string",
-        "value": "90%"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "205dp"
     },
     "_margin_": [
         0,
@@ -22,49 +22,40 @@
         0
     ],
     "_percent_": true,
-    "_skin_": "s7b37175c52947c1b5ccd5c5990426c0",
+    "_skin_": "sd2f811fd9404344b378701707352893",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "20dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "160dp"
     },
     "allboxes": [],
-    "autogrowmode": 0,
+    "autogrowmode": 1,
     "canUpdateUI": true,
     "children": [
-        "lblGrade",
-        "lblSubmittedBy",
-        "imgReviewRate",
-        "lblFeedback"
+        "lblTotalPrice",
+        "lblAmount"
     ],
     "clipbounds": false,
-    "containerId": true,
     "containerweight": 100,
-    "controllerInfo": {
-        "default": {
-            "channel": "mobile",
-            "name": "flxReviewsController"
-        }
-    },
     "enablescrolling": true,
-    "id": "flxReviews",
+    "id": "FlexContainer0bc56865be6c44f",
     "info": null,
-    "isTemplate": true,
     "iscustomlayout": false,
     "isvisible": true,
-    "kuid": "ca1783d5e7f54fdf83712347a22c8aa0",
-    "layouttype": 4,
+    "kuid": "a950b7b9547547b3a2866430dce653c9",
+    "layouttype": 3,
     "name": "kony.ui.FlexContainer",
-    "parent": "tempReview",
-    "pf": "tempReview",
+    "parent": "flxProductLists",
+    "pf": "frmShoppingCart",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "retainflowhorizontalalignment": false,
     "snapgridsize": 10,
     "snaptogrid": true,
     "wType": "FlexContainer",
-    "widgetalignment": 1
+    "widgetalignment": 1,
+    "zindex": 1
 }

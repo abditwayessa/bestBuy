@@ -7,7 +7,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "5%"
+        "value": "0dp"
     },
     "_margin_": [
         1,
@@ -21,15 +21,15 @@
         0,
         0
     ],
-    "_skin_": "sb78b813d76b43c1b1735917d846d4cb",
-    "_text_": "$ ",
+    "_skin_": "s6c726f492114a64b3c67458ad3dcf3f",
+    "_text_": "Label",
     "_top_": {
         "type": "string",
-        "value": "1%"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
-        "value": "90%"
+        "value": "130dp"
     },
     "_wrapping_": 2,
     "android": {
@@ -39,10 +39,9 @@
         }
     },
     "canUpdateUI": true,
-    "containerId": true,
     "containerweight": 100,
     "contentalignment": 4,
-    "id": "lblProductPrice",
+    "id": "lblAmount",
     "info": null,
     "ipad": {
         "psp": {
@@ -55,11 +54,11 @@
         }
     },
     "iscustomlayout": false,
-    "isvisible": true,
-    "kuid": "c4f76577db9d4e99b89e2d76babbdfbf",
+    "isvisible": false,
+    "kuid": "f8da3620ba4349e4be0ab6c44bd40bab",
     "name": "kony.ui.Label",
-    "parent": "flxProductRawDetail",
-    "pf": "tempProduct",
+    "parent": "FlexContainer0bc56865be6c44f",
+    "pf": "frmShoppingCart",
     "retaincontentalignment": false,
     "retainflexpositionproperties": false,
     "textstyle": {},

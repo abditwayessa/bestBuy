@@ -4,7 +4,8 @@
     "_data_": [
         {
             "btnDelete": {
-                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData"
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
             },
             "imgRemoveProduct": {
                 "@class": "com.viz.ide.model.segment.ImageSegmentData",
@@ -12,11 +13,131 @@
             },
             "lblProductNames": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "test"
+                "text": "1"
             },
             "lblProductPrice": {
                 "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
-                "text": "34567"
+                "text": "1"
+            },
+            "onSale": {
+                "text": ""
+            },
+            "sku": {
+                "text": ""
+            }
+        },
+        {
+            "btnDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "imgRemoveProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": ""
+            },
+            "lblProductNames": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "2"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "2"
+            },
+            "onSale": {
+                "text": ""
+            },
+            "sku": {
+                "text": ""
+            }
+        },
+        {
+            "btnDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "imgRemoveProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": ""
+            },
+            "lblProductNames": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "3"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "3"
+            },
+            "onSale": {
+                "text": ""
+            },
+            "sku": {
+                "text": ""
+            }
+        },
+        {
+            "btnDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "imgRemoveProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": ""
+            },
+            "lblProductNames": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "4"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "4"
+            },
+            "onSale": {
+                "text": ""
+            },
+            "sku": {
+                "text": ""
+            }
+        },
+        {
+            "btnDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "imgRemoveProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": ""
+            },
+            "lblProductNames": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "5"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "5"
+            },
+            "onSale": {
+                "text": ""
+            },
+            "sku": {
+                "text": ""
+            }
+        },
+        {
+            "btnDelete": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": ""
+            },
+            "imgRemoveProduct": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": ""
+            },
+            "lblProductNames": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "6"
+            },
+            "lblProductPrice": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "6"
             },
             "onSale": {
                 "text": ""
@@ -27,8 +148,8 @@
         }
     ],
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "70%"
     },
     "_indicator_": "none",
     "_left_": {
@@ -56,14 +177,14 @@
         "type": "string",
         "value": "100%"
     },
-    "autogrowmode": 1,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "centerx": {
         "type": "string",
         "value": "50%"
     },
     "containerweight": 100,
-    "counter": "00",
+    "counter": "05",
     "focusedindex": null,
     "focuseditem": null,
     "groupcells": false,
@@ -101,7 +222,7 @@
     "retainflexpositionproperties": false,
     "retainselection": false,
     "rowTemplateId": "c95381fc3f424981bc958e29de30eb62",
-    "rowcounter": 0,
+    "rowcounter": 5,
     "rowfocusskin": "s1617027537447f4aeb55848db0f637c",
     "rowskin": "se7a14abc533450cb759911dde92448d",
     "rowtemplate": "Flex0d8d14467b7ef42",

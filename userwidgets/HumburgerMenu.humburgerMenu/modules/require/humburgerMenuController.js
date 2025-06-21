@@ -27,6 +27,7 @@ define(function () {
             kony.application.destroyForm("frmStoreLocator");
             var ntf = new kony.mvc.Navigation("frmStoreLocator");
             ntf.navigate();
+            kony.application.destroyForm("frmHome");
           }
           break;
         case "cart":
@@ -35,6 +36,7 @@ define(function () {
           }else{
             var ntf = new kony.mvc.Navigation("frmShoppingCart");
             ntf.navigate();
+            kony.application.destroyForm("frmHome");
           }
           break;
         case "logout":

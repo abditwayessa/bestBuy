@@ -8,7 +8,7 @@
         <config-param api-version="" appid="" name="preprocessorRules" value=""/>
         <config-param api-version="" appid="" name="postprocessorRules" value=""/>
         <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
-        <config-param api-version="" appid="" name="endpointUrl" value="https://api.bestbuy.com/v1/reviews(sku=$sku)?apiKey=$apiKey&amp;format=json"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="https://api.bestbuy.com/v1/reviews(sku=$sku)?apiKey=$apiKey&amp;format=json&amp;pageSize=10"/>
         <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
         <config-param api-version="" appid="" name="http.method" value="GET"/>
         <config-param api-version="" appid="" name="dataObjectName" value=""/>
@@ -23,7 +23,7 @@
         <param datatype="string" defaultvalue="Qazwip3yuA0ELuEGmoAJG7Tm" description="" encode="true" format="None" formatvalue="" name="apiKey" order="" paramOrder="1" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="Qazwip3yuA0ELuEGmoAJG7Tm" value="Qazwip3yuA0ELuEGmoAJG7Tm" isExtended="false">
             <accessType></accessType>
         </param>
-        <param datatype="string" defaultvalue="6398599" description="" encode="true" format="None" formatvalue="" name="sku" order="" paramOrder="2" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="6398599" value="6398599" isExtended="false">
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="sku" order="" paramOrder="2" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="" isExtended="false">
             <accessType></accessType>
         </param>
         <stub-param value=""/>

@@ -39,7 +39,7 @@
     "id": "btnNext",
     "info": null,
     "iscustomlayout": false,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "g332a8f1fc2b4ff4a6f2bec50618f502",
     "name": "kony.ui.Button",
     "parent": "flxPagination",
